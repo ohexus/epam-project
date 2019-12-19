@@ -1,0 +1,25 @@
+{
+    "name": "epam-project",
+    "version": "1.0.0",
+    "description": "epam project blog",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ohexus/epam-project.git"
+    },
+    "author": "Taras Moskalenko",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ohexus/epam-project/issues"
+    },
+    "homepage": "https://github.com/ohexus/epam-project#readme",
+    "dependencies": {
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-clean": "^0.4.0",
+        "gulp-sass": "^4.0.2"
+    }
+}

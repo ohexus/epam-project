@@ -1,6 +1,9 @@
 # Gulp
 gulpfile.js
 
+# vs-code
+*.code-workspace
+
 # Logs
 logs
 *.log
