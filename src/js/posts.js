@@ -71,16 +71,21 @@ window.addEventListener('load', async() => {
         const dArticle = data.article;
         const articleLength = dArticle.content.length;
         let symbolLimit;
+        let articleSize;
+
         if (!dArticle.content) {
             post.className += ' post-small';
             symbolLimit = 0;
+            articleSize = 'small';
         } else {
             if (articleLength < 400) {
                 symbolLimit = 150;
                 post.className += ' post-medium';
+                articleSize = 'medium';
             } else {
                 symbolLimit = 400;
                 post.className += ' post-big';
+                articleSize = 'big';
             }
         }
 
@@ -96,11 +101,25 @@ window.addEventListener('load', async() => {
         const article = post.querySelector('.post__article');
         const title = article.querySelector('.post__title');
         const content = article.querySelector('.post__content');
+        const contentMediumHeightLimit = 115;
+        const contentBigHeightLimit = 320;
         title.textContent = dArticle.title;
 
         if (articleLength >= symbolLimit) {
             content.textContent = strEndSearch(dArticle.content, symbolLimit);
             content.textContent += '...';
+            if (articleSize == 'medium' && content.offsetHeight > contentMediumHeightLimit) {
+                symbolLimit--;
+                content.textContent = content.textContent.substr(0, content.textContent.length - 3);
+                content.textContent = strEndSearch(content.textContent, symbolLimit);
+                content.textContent += '...';
+            }
+            if (articleSize == 'big' && content.offsetHeight > contentBigHeightLimit) {
+                symbolLimit--;
+                content.textContent = content.textContent.substr(0, content.textContent.length - 3);
+                content.textContent = strEndSearch(content.textContent, symbolLimit);
+                content.textContent += '...';
+            }
         } else {
             content.textContent = dArticle.content;
         }
@@ -119,12 +138,20 @@ window.addEventListener('load', async() => {
         const sliderTitle = slider.getElementsByClassName('item-content__title')[sliderCurrent];
         const sliderContent = slider.getElementsByClassName('item-content__content')[sliderCurrent];
         const sliderSymbolLimit = 500;
+        const sliderHeightLimit = 180;
 
         sliderTitle.textContent = data.article.title;
+
 
         if (data.article.content.length > sliderSymbolLimit) {
             sliderContent.textContent = strEndSearch(data.article.content, sliderSymbolLimit);
             sliderContent.textContent += '...';
+            if (sliderContent.offsetHeight > sliderHeightLimit) {
+                sliderSymbolLimit--;
+                sliderContent.textContent = sliderContent.textContent.substr(0, sliderContent.textContent.length - 3);
+                sliderContent.textContent = strEndSearch(sliderContent.textContent, sliderSymbolLimit);
+                sliderContent.textContent += '...';
+            }
         } else {
             sliderContent.textContent = data.article.content;
         }
@@ -137,15 +164,19 @@ window.addEventListener('load', async() => {
     let postsFilled = 0;
 
     function addPosts() {
-        for (let i = 0; i < itemsPerPage; i++) {
-            postsGrid.insertAdjacentHTML("beforeend", post_struct);
+        if ((data.length - 1 - postsFilled) >= itemsPerPage) {
+            for (let i = 0; i < itemsPerPage; i++) {
+                postsGrid.insertAdjacentHTML("beforeend", post_struct);
+            }
+        } else {
+            for (let i = 0; i < (data.length - 1 - postsFilled); i++) {
+                postsGrid.insertAdjacentHTML("beforeend", post_struct);
+            }
         }
         for (postsFilled; postsFilled < posts.length; postsFilled++) {
             postFill(posts[postsFilled], data[postsFilled]);
             if ((data[postsFilled].article.content.length != 0) && (sliderCurrent <= slider_limit)) {
                 sliderFill(slider, data[postsFilled]);
-                // sliderCurrent++;
-                console.log('shit');
             }
         }
     }
