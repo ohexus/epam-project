@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/post.css">
 </head>
 
 <body>
@@ -54,74 +55,54 @@
                         </li>
                     </ul>
                 </nav>
-
-                <ul class="slider" id="slider">
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-1">
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-2" checked>
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-3">
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-4">
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-5">
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <li class="slider-panel">
-                        <label for="slide-1" class="slider-dot" id="slide-dot-1"></label>
-                        <label for="slide-2" class="slider-dot" id="slide-dot-2"></label>
-                        <label for="slide-3" class="slider-dot" id="slide-dot-3"></label>
-                        <label for="slide-4" class="slider-dot" id="slide-dot-4"></label>
-                        <label for="slide-5" class="slider-dot" id="slide-dot-5"></label>
-                    </li>
-                </ul>
-
             </header>
         </div>
 
         <div class="main-wrap">
-            <div class="posts-wrap">
-                <div class="posts">
-
+            <div class="post">
+                <img class="post__image"></img>
+                <div class="post__description">
+                    <div class="post__info-wrap">
+                        <img class="post__author-avatar"></img>
+                        <div class="post__info">
+                            <div class="post__author-name"></div>
+                            <div class="post__date">
+                                <div class="post__date-published"></div>
+                                <div class="post__date-point">·</div>
+                                <div class="post__time-published"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post__article">
+                        <h3 class="post__title"></h3>
+                        <div class="post__content-wrap">
+                            <p class="post__content"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="post__footer">
+                    <hr class="post__hr">
+                    <div class="post__stats">
+                        <div class="post__views">
+                            <span class="post__views-number"></span>
+                            <span>views</span>
+                        </div>
+                        <div class="post__likes">
+                            <span class="post__likes-number"></span>
+                            <span>likes</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class=" more-btn-wrap">
-                <button type="button" class="more-btn">View more...</button>
+            <div class="comments-wrap">
+                <div class="comments__amount">
+                    <span class="comments__amount-number">0</span>
+                    <span>Comments</span>
+                </div>
+                <div class="comments">
+
+                </div>
             </div>
         </div>
 
@@ -222,10 +203,9 @@
 
             </footer>
         </div>
-
     </div>
 </body>
 
-<script src="../js/posts.js"></script>
+<script src="../js/singlePost.js"></script>
 
 </html>

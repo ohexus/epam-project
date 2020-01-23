@@ -1,5 +1,6 @@
 [{
-    "author": "Idllo",
+    "postId": 0,
+    "userId": 0,
     "date": {
         "datePublished": "15.01.2020",
         "timePublished": "13:37"
@@ -14,7 +15,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414300446_85e3703a3c_b.jpg"
 }, {
-    "author": "Turronyni",
+    "postId": 1,
+    "userId": 1,
     "date": {
         "datePublished": "13.01.2020",
         "timePublished": "20:20"
@@ -29,7 +31,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414504097_29327a8261_b.jpg"
 }, {
-    "author": "Jierall",
+    "postId": 2,
+    "userId": 2,
     "date": {
         "datePublished": "07.01.2020",
         "timePublished": "15:46"
@@ -44,7 +47,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414502932_cc42d70cde_b.jpg"
 }, {
-    "author": "Ubi",
+    "postId": 3,
+    "userId": 3,
     "date": {
         "datePublished": "23.12.2019",
         "timePublished": "05:26"
@@ -59,14 +63,15 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414298451_44cfe569b7_b.jpg"
 }, {
-    "author": "Qialluc",
+    "postId": 4,
+    "userId": 4,
     "date": {
         "datePublished": "18.12.2019",
         "timePublished": "02:01"
     },
     "article": {
         "title": "Title 5",
-        "content": "Sed sed facilisis mi.Fusce laoreet, lectus at euismod fermentum, dui metus sagittis sapien, non accumsan lectus nunc ac lacus.Phasellus imperdiet mi eget ex pharetra semper.Aliquam nec odio."
+        "content": "Sed sed facilisis mi. Fusce laoreet, lectus at euismod fermentum, dui metus sagittis sapien, non accumsan lectus nunc ac lacus. Phasellus imperdiet mi eget ex pharetra semper. Aliquam nec odio."
     },
     "stats": {
         "views": 20931,
@@ -74,7 +79,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414497962_413fc60ca5_b.jpg"
 }, {
-    "author": "Ubi",
+    "postId": 5,
+    "userId": 5,
     "date": {
         "datePublished": "15.12.2019",
         "timePublished": "14:12"
@@ -89,7 +95,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414506227_3004eef11d_b.jpg"
 }, {
-    "author": "Vana",
+    "postId": 6,
+    "userId": 6,
     "date": {
         "datePublished": "13.12.2019",
         "timePublished": "06:56"
@@ -104,7 +111,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414508182_db6d3d6ea7_b.jpg"
 }, {
-    "author": "Hireus",
+    "postId": 7,
+    "userId": 7,
     "date": {
         "datePublished": "12.12.2019",
         "timePublished": "23:59"
@@ -119,7 +127,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414497062_959d10ec6b_b.jpg"
 }, {
-    "author": "Tamamian",
+    "postId": 8,
+    "userId": 8,
     "date": {
         "datePublished": "12.12.2019",
         "timePublished": "11:31"
@@ -134,7 +143,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414495797_4a9266cb03_b.jpg"
 }, {
-    "author": "Nened",
+    "postId": 9,
+    "userId": 9,
     "date": {
         "datePublished": "11.12.2019",
         "timePublished": "23:19"
@@ -149,7 +159,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414281651_54e137956e_b.jpg"
 }, {
-    "author": "Lybie",
+    "postId": 10,
+    "userId": 10,
     "date": {
         "datePublished": "10.12.2019",
         "timePublished": "19:47"
@@ -164,7 +175,8 @@
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414305081_d99199ae0d_b.jpg"
 }, {
-    "author": "Ubicorn",
+    "postId": 11,
+    "userId": 11,
     "date": {
         "datePublished": "09.12.2019",
         "timePublished": "14:52"
@@ -178,4 +190,36 @@
         "likes": 27220
     },
     "imageUrl": "http://farm66.static.flickr.com/65535/49414306606_f129a1ac07_b.jpg"
+}, {
+    "postId": 12,
+    "userId": 12,
+    "date": {
+        "datePublished": "09.12.2019",
+        "timePublished": "11:53"
+    },
+    "article": {
+        "title": "Title 13",
+        "content": ""
+    },
+    "stats": {
+        "views": 11306,
+        "likes": 5271
+    },
+    "imageUrl": "http://farm66.static.flickr.com/65535/49414820156_7a0a7c985d_b.jpg"
+}, {
+    "postId": 13,
+    "userId": 13,
+    "date": {
+        "datePublished": "09.12.2019",
+        "timePublished": "04:23"
+    },
+    "article": {
+        "title": "Title 14",
+        "content": "Donec semper sapien id orci finibus lobortis. Nulla eu nunc est. Aliquam non tempor arcu, nec placerat eros. Sed ipsum est, laoreet a velit mattis, ornare egestas ligula. Vestibulum at eleifend purus. Donec maximus eu odio vitae sagittis. Nullam pretium dolor justo, a ornare lacus faucibus sed. Vivamus bibendum iaculis viverra. Quisque eu laoreet nunc. Quisque convallis tincidunt ex id mollis. Fusce at euismod nisl. Nam bibendum id erat interdum molestie. Donec porttitor lacus sollicitudin erat tempor, ac dictum magna dictum. Nulla fringilla nulla id faucibus volutpat. Mauris turpis neque, luctus nec commodo ac, congue vitae nunc. Suspendisse ultrices enim velit, nec dignissim tellus malesuada quis. Donec non augue hendrerit, lobortis augue a, interdum neque. Sed tincidunt sollicitudin risus ut tristique. Mauris consequat accumsan lectus, vitae consectetur lorem eleifend eget. Nunc velit massa, posuere ac urna ut, eleifend venenatis mauris. Nulla vestibulum varius vehicula. Pellentesque ac dolor ipsum. Morbi non."
+    },
+    "stats": {
+        "views": 15948,
+        "likes": 8491
+    },
+    "imageUrl": "http://farm66.static.flickr.com/65535/49414832581_93512c62d8_b.jpg"
 }]

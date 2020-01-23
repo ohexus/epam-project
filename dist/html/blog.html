@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
 </head>
 
 <body>
@@ -54,66 +55,21 @@
                         </li>
                     </ul>
                 </nav>
-
-                <ul class="slider" id="slider">
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-1">
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-2" checked>
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-3">
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-4">
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <input type="radio" name="radio-slider" class="radio-slider" id="slide-5">
-                    <li class="slider__item">
-                        <img class="slider__item-image">
-                        <div class="slider__item-content">
-                            <h4 class="item-content__title"></h4>
-                            <p class="item-content__content"></p>
-                        </div>
-                    </li>
-
-                    <li class="slider-panel">
-                        <label for="slide-1" class="slider-dot" id="slide-dot-1"></label>
-                        <label for="slide-2" class="slider-dot" id="slide-dot-2"></label>
-                        <label for="slide-3" class="slider-dot" id="slide-dot-3"></label>
-                        <label for="slide-4" class="slider-dot" id="slide-dot-4"></label>
-                        <label for="slide-5" class="slider-dot" id="slide-dot-5"></label>
-                    </li>
-                </ul>
-
             </header>
         </div>
 
         <div class="main-wrap">
+            <div class="filters">
+                <div class="filters__sort">
+                    <button class="filters__sort-btn">Sort by</button>
+                    <ul class="filters__sort-menu">
+                        <li class="sort-menu__item" data-sort="views">Most viewed</li>
+                        <li class="sort-menu__item" data-sort="likes">Most liked</li>
+                        <li class="sort-menu__item" data-sort="newness">New posts</li>
+                        <!-- <li class="sort-style__item"></li> -->
+                    </ul>
+                </div>
+            </div>
             <div class="posts-wrap">
                 <div class="posts">
 
@@ -226,6 +182,6 @@
     </div>
 </body>
 
-<script src="../js/posts.js"></script>
+<script src="../js/blog.js"></script>
 
 </html>

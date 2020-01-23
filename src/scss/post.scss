@@ -1,0 +1,143 @@
+%flexx-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    height: 150px;
+}
+
+.post {
+    width: 85%;
+    margin: 25px auto 10px;
+    opacity: 1;
+    box-shadow: 0px 5px 15px -7px rgba(0, 0, 0, 0.75);
+}
+
+.post__image {
+    height: 100%;
+    margin-bottom: 20px;
+    max-height: 400px;
+    object-position: center;
+    position: relative;
+}
+
+.post__author {
+    height: 70px;
+}
+
+.post__author-avatar {
+    width: 64px;
+    height: 64px;
+}
+
+.post__info {
+    margin-left: 16px;
+}
+
+.post__author-name,
+.post__stats {
+    font-size: 22px;
+}
+
+.post__date {
+    font-size: 20px;
+}
+
+.post__article {
+    margin: 15px auto 30px;
+}
+
+.post__title {
+    margin: 0 auto 30px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.post__content-wrap {
+    padding: 0 32px;
+}
+
+.post__content {
+    height: max-content;
+    font-size: 26px;
+}
+
+.post__footer {
+    position: static;
+    width: 100%;
+}
+
+.post__stats {
+    padding: 0 10%;
+    box-sizing: border-box;
+}
+
+.post__views,
+.post__likes {
+    margin: 0;
+}
+
+.comments-wrap {
+    width: 85%;
+    height: max-content;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    padding: 0 5%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: rgb(190, 190, 190);
+    box-shadow: 0px 5px 15px -7px rgba(0, 0, 0, 0.75);
+}
+
+.comments__amount {
+    margin: 30px 5% 50px;
+    font-size: 30px;
+}
+
+.comments__comment {
+    width: 90%;
+    margin: 20px auto;
+    background: rgb(223, 223, 223);
+    border-radius: 24px;
+    box-shadow: 0px 5px 20px -12px rgba(0, 0, 0, 0.75);
+}
+
+.comment__info {
+    @extend %flexx-center;
+    justify-content: flex-start;
+    height: 48px;
+    padding: 5px;
+}
+
+.comment__author,
+.comment__date {
+    @extend %flexx-center;
+    font-size: 22px;
+}
+
+.comment__author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+}
+
+.comment__author-name {
+    margin: 0 0 0 10px;
+}
+
+.comment__date {
+    // position: absolute;
+    // top: 50%;
+    // left: 25%;
+    // transform: translateY(-50%);
+    margin: 0 0 0 20px;
+    font-size: 18px;
+}
+
+.comment__content {
+    padding: 20px 63px 30px;
+    font-size: 20px;
+    text-align: justify;
+}
