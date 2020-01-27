@@ -76,7 +76,7 @@ body {
 .logo__image {
     width: 55px;
     height: 55px;
-    background: center / cover url(../../src/img/logo.png);
+    background: center / cover url(../Images/logo.png);
 }
 
 .logo__name {
@@ -182,7 +182,7 @@ body {
         display: block;
         width: 24px;
         height: 24px;
-        background: no-repeat center/contain url(../../src/img/search.png);
+        background: no-repeat center/contain url(../Images/search.png);
         filter: invert(1);
     }
 }

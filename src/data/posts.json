@@ -1,225 +1,227 @@
-[{
-    "postId": 0,
-    "userId": 0,
-    "date": {
-        "datePublished": "15.01.2020",
-        "timePublished": "13:37"
-    },
-    "article": {
-        "title": "Title",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget feugiat mauris. Aenean egestas dapibus lacus. Praesent euismod dui erat, in tempus massa interdum non. Morbi velit orci, dapibus congue dictum vel, blandit vel sem. Donec eget scelerisque turpis. Fusce."
-    },
-    "stats": {
-        "views": 1984,
-        "likes": 322
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414300446_85e3703a3c_b.jpg"
-}, {
-    "postId": 1,
-    "userId": 1,
-    "date": {
-        "datePublished": "13.01.2020",
-        "timePublished": "20:20"
-    },
-    "article": {
-        "title": "Title 2",
-        "content": "Mauris metus purus, aliquam a lectus et, rhoncus ultricies enim. Morbi pulvinar id purus ut consequat. Morbi at commodo felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices facilisis dui. Cras vel vestibulum arcu. Quisque at enim eget tellus consectetur commodo. Nulla accumsan quam massa, ut accumsan orci sollicitudin ut. Aliquam erat volutpat. Sed magna ipsum, tristique a varius vel, lacinia sit amet magna. Ut bibendum mattis velit, a posuere tortor tincidunt a. In maximus accumsan dui, nec ornare dolor laoreet vitae. Nullam et accumsan dolor, sit amet euismod purus. Cras et tortor egestas odio egestas placerat vitae ac nunc. Vestibulum eu sem purus. Maecenas tempor maximus urna a ultricies. Phasellus non odio in dolor dignissim blandit eget ac sapien. In hac habitasse platea dictumst. Ut in ligula mattis velit elementum finibus. Aenean vehicula mauris nec massa semper, quis gravida orci placerat. Etiam posuere fermentum nunc ac consequat."
-    },
-    "stats": {
-        "views": 7012,
-        "likes": 1247
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414504097_29327a8261_b.jpg"
-}, {
-    "postId": 2,
-    "userId": 2,
-    "date": {
-        "datePublished": "07.01.2020",
-        "timePublished": "15:46"
-    },
-    "article": {
-        "title": "Title 3",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor maximus metus, ut fermentum eros condimentum sit amet. Praesent eget risus odio. Donec ex turpis, lobortis sit amet justo nec, congue posuere est. Proin consequat ante vitae mi commodo imperdiet. Mauris sed augue pulvinar, volutpat nunc et, tempor ante. Maecenas ac orci finibus, consectetur nisl id, facilisis lectus. Aliquam."
-    },
-    "stats": {
-        "views": 456,
-        "likes": 12
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414502932_cc42d70cde_b.jpg"
-}, {
-    "postId": 3,
-    "userId": 3,
-    "date": {
-        "datePublished": "23.12.2019",
-        "timePublished": "05:26"
-    },
-    "article": {
-        "title": "Title 4",
-        "content": ""
-    },
-    "stats": {
-        "views": 4781,
-        "likes": 1652
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414298451_44cfe569b7_b.jpg"
-}, {
-    "postId": 4,
-    "userId": 4,
-    "date": {
-        "datePublished": "18.12.2019",
-        "timePublished": "02:01"
-    },
-    "article": {
-        "title": "Title 5",
-        "content": "Sed sed facilisis mi. Fusce laoreet, lectus at euismod fermentum, dui metus sagittis sapien, non accumsan lectus nunc ac lacus. Phasellus imperdiet mi eget ex pharetra semper. Aliquam nec odio."
-    },
-    "stats": {
-        "views": 20931,
-        "likes": 7801
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414497962_413fc60ca5_b.jpg"
-}, {
-    "postId": 5,
-    "userId": 5,
-    "date": {
-        "datePublished": "15.12.2019",
-        "timePublished": "14:12"
-    },
-    "article": {
-        "title": "Title 6",
-        "content": "Nunc volutpat suscipit ligula, vel cursus nunc ornare sed. Nullam ante nunc, faucibus sit amet tellus sit amet, dignissim tempus metus. Sed non consectetur eros. Ut non consequat massa, in."
-    },
-    "stats": {
-        "views": 15006,
-        "likes": 4721
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414506227_3004eef11d_b.jpg"
-}, {
-    "postId": 6,
-    "userId": 6,
-    "date": {
-        "datePublished": "13.12.2019",
-        "timePublished": "06:56"
-    },
-    "article": {
-        "title": "Title 7",
-        "content": "Quisque nec elit consequat, consectetur neque ac, vehicula nibh. Phasellus scelerisque eleifend elit non varius. Sed gravida justo a interdum aliquet. Etiam imperdiet erat a commodo eleifend. In aliquet felis."
-    },
-    "stats": {
-        "views": 2638,
-        "likes": 1240
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414508182_db6d3d6ea7_b.jpg"
-}, {
-    "postId": 7,
-    "userId": 7,
-    "date": {
-        "datePublished": "12.12.2019",
-        "timePublished": "23:59"
-    },
-    "article": {
-        "title": "Title 8",
-        "content": ""
-    },
-    "stats": {
-        "views": 12038,
-        "likes": 5023
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414497062_959d10ec6b_b.jpg"
-}, {
-    "postId": 8,
-    "userId": 8,
-    "date": {
-        "datePublished": "12.12.2019",
-        "timePublished": "11:31"
-    },
-    "article": {
-        "title": "Title 9",
-        "content": "Quisque dignissim, odio a auctor pulvinar, orci metus faucibus nibh, non imperdiet ante ex ut nisi. Nam pharetra ligula libero."
-    },
-    "stats": {
-        "views": 9128,
-        "likes": 3005
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414495797_4a9266cb03_b.jpg"
-}, {
-    "postId": 9,
-    "userId": 9,
-    "date": {
-        "datePublished": "11.12.2019",
-        "timePublished": "23:19"
-    },
-    "article": {
-        "title": "Title 10",
-        "content": "Nullam faucibus venenatis lobortis. Maecenas malesuada tempor nisl, et ultricies ex. Nulla a magna aliquam, rutrum massa ut, molestie odio. Donec ut sem sed libero tempus cursus ut eu nulla. In convallis, enim tristique varius vehicula, velit lacus efficitur ante, a commodo velit ante in nulla. Cras sit amet erat."
-    },
-    "stats": {
-        "views": 9423,
-        "likes": 5417
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414281651_54e137956e_b.jpg"
-}, {
-    "postId": 10,
-    "userId": 10,
-    "date": {
-        "datePublished": "10.12.2019",
-        "timePublished": "19:47"
-    },
-    "article": {
-        "title": "Title 11",
-        "content": "Duis tempor libero in eros ullamcorper malesuada. Vestibulum orci odio, consectetur quis nibh ut, tempus sollicitudin quam. Pellentesque porttitor elit eu velit convallis mollis at nec massa. Cras rutrum placerat erat non cursus. Nunc eleifend libero eget erat vehicula blandit eget a est. Morbi euismod accumsan felis, id sagittis justo."
-    },
-    "stats": {
-        "views": 17073,
-        "likes": 6912
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414305081_d99199ae0d_b.jpg"
-}, {
-    "postId": 11,
-    "userId": 11,
-    "date": {
-        "datePublished": "09.12.2019",
-        "timePublished": "14:52"
-    },
-    "article": {
-        "title": "Title 12",
-        "content": ""
-    },
-    "stats": {
-        "views": 40206,
-        "likes": 27220
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414306606_f129a1ac07_b.jpg"
-}, {
-    "postId": 12,
-    "userId": 12,
-    "date": {
-        "datePublished": "09.12.2019",
-        "timePublished": "11:53"
-    },
-    "article": {
-        "title": "Title 13",
-        "content": ""
-    },
-    "stats": {
-        "views": 11306,
-        "likes": 5271
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414820156_7a0a7c985d_b.jpg"
-}, {
-    "postId": 13,
-    "userId": 13,
-    "date": {
-        "datePublished": "09.12.2019",
-        "timePublished": "04:23"
-    },
-    "article": {
-        "title": "Title 14",
-        "content": "Donec semper sapien id orci finibus lobortis. Nulla eu nunc est. Aliquam non tempor arcu, nec placerat eros. Sed ipsum est, laoreet a velit mattis, ornare egestas ligula. Vestibulum at eleifend purus. Donec maximus eu odio vitae sagittis. Nullam pretium dolor justo, a ornare lacus faucibus sed. Vivamus bibendum iaculis viverra. Quisque eu laoreet nunc. Quisque convallis tincidunt ex id mollis. Fusce at euismod nisl. Nam bibendum id erat interdum molestie. Donec porttitor lacus sollicitudin erat tempor, ac dictum magna dictum. Nulla fringilla nulla id faucibus volutpat. Mauris turpis neque, luctus nec commodo ac, congue vitae nunc. Suspendisse ultrices enim velit, nec dignissim tellus malesuada quis. Donec non augue hendrerit, lobortis augue a, interdum neque. Sed tincidunt sollicitudin risus ut tristique. Mauris consequat accumsan lectus, vitae consectetur lorem eleifend eget. Nunc velit massa, posuere ac urna ut, eleifend venenatis mauris. Nulla vestibulum varius vehicula. Pellentesque ac dolor ipsum. Morbi non."
-    },
-    "stats": {
-        "views": 15948,
-        "likes": 8491
-    },
-    "imageUrl": "http://farm66.static.flickr.com/65535/49414832581_93512c62d8_b.jpg"
-}]
+{
+    "dataPosts": [{
+        "postId": 0,
+        "userId": 0,
+        "date": {
+            "datePublished": "15.01.2020",
+            "timePublished": "13:37"
+        },
+        "article": {
+            "title": "Title",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget feugiat mauris. Aenean egestas dapibus lacus. Praesent euismod dui erat, in tempus massa interdum non. Morbi velit orci, dapibus congue dictum vel, blandit vel sem. Donec eget scelerisque turpis. Fusce."
+        },
+        "stats": {
+            "views": 1984,
+            "likes": 322
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414300446_85e3703a3c_b.jpg"
+    }, {
+        "postId": 1,
+        "userId": 1,
+        "date": {
+            "datePublished": "13.01.2020",
+            "timePublished": "20:20"
+        },
+        "article": {
+            "title": "Title 2",
+            "content": "Mauris metus purus, aliquam a lectus et, rhoncus ultricies enim. Morbi pulvinar id purus ut consequat. Morbi at commodo felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices facilisis dui. Cras vel vestibulum arcu. Quisque at enim eget tellus consectetur commodo. Nulla accumsan quam massa, ut accumsan orci sollicitudin ut. Aliquam erat volutpat. Sed magna ipsum, tristique a varius vel, lacinia sit amet magna. Ut bibendum mattis velit, a posuere tortor tincidunt a. In maximus accumsan dui, nec ornare dolor laoreet vitae. Nullam et accumsan dolor, sit amet euismod purus. Cras et tortor egestas odio egestas placerat vitae ac nunc. Vestibulum eu sem purus. Maecenas tempor maximus urna a ultricies. Phasellus non odio in dolor dignissim blandit eget ac sapien. In hac habitasse platea dictumst. Ut in ligula mattis velit elementum finibus. Aenean vehicula mauris nec massa semper, quis gravida orci placerat. Etiam posuere fermentum nunc ac consequat."
+        },
+        "stats": {
+            "views": 7012,
+            "likes": 1247
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414504097_29327a8261_b.jpg"
+    }, {
+        "postId": 2,
+        "userId": 2,
+        "date": {
+            "datePublished": "07.01.2020",
+            "timePublished": "15:46"
+        },
+        "article": {
+            "title": "Title 3",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor maximus metus, ut fermentum eros condimentum sit amet. Praesent eget risus odio. Donec ex turpis, lobortis sit amet justo nec, congue posuere est. Proin consequat ante vitae mi commodo imperdiet. Mauris sed augue pulvinar, volutpat nunc et, tempor ante. Maecenas ac orci finibus, consectetur nisl id, facilisis lectus. Aliquam."
+        },
+        "stats": {
+            "views": 456,
+            "likes": 12
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414502932_cc42d70cde_b.jpg"
+    }, {
+        "postId": 3,
+        "userId": 3,
+        "date": {
+            "datePublished": "23.12.2019",
+            "timePublished": "05:26"
+        },
+        "article": {
+            "title": "Title 4",
+            "content": ""
+        },
+        "stats": {
+            "views": 4781,
+            "likes": 1652
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414298451_44cfe569b7_b.jpg"
+    }, {
+        "postId": 4,
+        "userId": 4,
+        "date": {
+            "datePublished": "18.12.2019",
+            "timePublished": "02:01"
+        },
+        "article": {
+            "title": "Title 5",
+            "content": "Sed sed facilisis mi. Fusce laoreet, lectus at euismod fermentum, dui metus sagittis sapien, non accumsan lectus nunc ac lacus. Phasellus imperdiet mi eget ex pharetra semper. Aliquam nec odio."
+        },
+        "stats": {
+            "views": 20931,
+            "likes": 7801
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414497962_413fc60ca5_b.jpg"
+    }, {
+        "postId": 5,
+        "userId": 5,
+        "date": {
+            "datePublished": "15.12.2019",
+            "timePublished": "14:12"
+        },
+        "article": {
+            "title": "Title 6",
+            "content": "Nunc volutpat suscipit ligula, vel cursus nunc ornare sed. Nullam ante nunc, faucibus sit amet tellus sit amet, dignissim tempus metus. Sed non consectetur eros. Ut non consequat massa, in."
+        },
+        "stats": {
+            "views": 15006,
+            "likes": 4721
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414506227_3004eef11d_b.jpg"
+    }, {
+        "postId": 6,
+        "userId": 6,
+        "date": {
+            "datePublished": "13.12.2019",
+            "timePublished": "06:56"
+        },
+        "article": {
+            "title": "Title 7",
+            "content": "Quisque nec elit consequat, consectetur neque ac, vehicula nibh. Phasellus scelerisque eleifend elit non varius. Sed gravida justo a interdum aliquet. Etiam imperdiet erat a commodo eleifend. In aliquet felis."
+        },
+        "stats": {
+            "views": 2638,
+            "likes": 1240
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414508182_db6d3d6ea7_b.jpg"
+    }, {
+        "postId": 7,
+        "userId": 7,
+        "date": {
+            "datePublished": "12.12.2019",
+            "timePublished": "23:59"
+        },
+        "article": {
+            "title": "Title 8",
+            "content": ""
+        },
+        "stats": {
+            "views": 12038,
+            "likes": 5023
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414497062_959d10ec6b_b.jpg"
+    }, {
+        "postId": 8,
+        "userId": 8,
+        "date": {
+            "datePublished": "12.12.2019",
+            "timePublished": "11:31"
+        },
+        "article": {
+            "title": "Title 9",
+            "content": "Quisque dignissim, odio a auctor pulvinar, orci metus faucibus nibh, non imperdiet ante ex ut nisi. Nam pharetra ligula libero."
+        },
+        "stats": {
+            "views": 9128,
+            "likes": 3005
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414495797_4a9266cb03_b.jpg"
+    }, {
+        "postId": 9,
+        "userId": 9,
+        "date": {
+            "datePublished": "11.12.2019",
+            "timePublished": "23:19"
+        },
+        "article": {
+            "title": "Title 10",
+            "content": "Nullam faucibus venenatis lobortis. Maecenas malesuada tempor nisl, et ultricies ex. Nulla a magna aliquam, rutrum massa ut, molestie odio. Donec ut sem sed libero tempus cursus ut eu nulla. In convallis, enim tristique varius vehicula, velit lacus efficitur ante, a commodo velit ante in nulla. Cras sit amet erat."
+        },
+        "stats": {
+            "views": 9423,
+            "likes": 5417
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414281651_54e137956e_b.jpg"
+    }, {
+        "postId": 10,
+        "userId": 10,
+        "date": {
+            "datePublished": "10.12.2019",
+            "timePublished": "19:47"
+        },
+        "article": {
+            "title": "Title 11",
+            "content": "Duis tempor libero in eros ullamcorper malesuada. Vestibulum orci odio, consectetur quis nibh ut, tempus sollicitudin quam. Pellentesque porttitor elit eu velit convallis mollis at nec massa. Cras rutrum placerat erat non cursus. Nunc eleifend libero eget erat vehicula blandit eget a est. Morbi euismod accumsan felis, id sagittis justo."
+        },
+        "stats": {
+            "views": 17073,
+            "likes": 6912
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414305081_d99199ae0d_b.jpg"
+    }, {
+        "postId": 11,
+        "userId": 11,
+        "date": {
+            "datePublished": "09.12.2019",
+            "timePublished": "14:52"
+        },
+        "article": {
+            "title": "Title 12",
+            "content": ""
+        },
+        "stats": {
+            "views": 40206,
+            "likes": 27220
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414306606_f129a1ac07_b.jpg"
+    }, {
+        "postId": 12,
+        "userId": 12,
+        "date": {
+            "datePublished": "09.12.2019",
+            "timePublished": "11:53"
+        },
+        "article": {
+            "title": "Title 13",
+            "content": ""
+        },
+        "stats": {
+            "views": 11306,
+            "likes": 5271
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414820156_7a0a7c985d_b.jpg"
+    }, {
+        "postId": 13,
+        "userId": 13,
+        "date": {
+            "datePublished": "09.12.2019",
+            "timePublished": "04:23"
+        },
+        "article": {
+            "title": "Title 14",
+            "content": "Donec semper sapien id orci finibus lobortis. Nulla eu nunc est. Aliquam non tempor arcu, nec placerat eros. Sed ipsum est, laoreet a velit mattis, ornare egestas ligula. Vestibulum at eleifend purus. Donec maximus eu odio vitae sagittis. Nullam pretium dolor justo, a ornare lacus faucibus sed. Vivamus bibendum iaculis viverra. Quisque eu laoreet nunc. Quisque convallis tincidunt ex id mollis. Fusce at euismod nisl. Nam bibendum id erat interdum molestie. Donec porttitor lacus sollicitudin erat tempor, ac dictum magna dictum. Nulla fringilla nulla id faucibus volutpat. Mauris turpis neque, luctus nec commodo ac, congue vitae nunc. Suspendisse ultrices enim velit, nec dignissim tellus malesuada quis. Donec non augue hendrerit, lobortis augue a, interdum neque. Sed tincidunt sollicitudin risus ut tristique. Mauris consequat accumsan lectus, vitae consectetur lorem eleifend eget. Nunc velit massa, posuere ac urna ut, eleifend venenatis mauris. Nulla vestibulum varius vehicula. Pellentesque ac dolor ipsum. Morbi non."
+        },
+        "stats": {
+            "views": 15948,
+            "likes": 8491
+        },
+        "imageUrl": "http://farm66.static.flickr.com/65535/49414832581_93512c62d8_b.jpg"
+    }]
+}
