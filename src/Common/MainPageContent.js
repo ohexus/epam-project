@@ -2,16 +2,11 @@ import { Component } from '../Core/Component.js';
 import { addPosts } from '../Core/AddPosts.js'
 import { ButtonMore } from './ButtonMore.js'
 
-// const markup = addPosts();
-// new Post().getMarkup()
 const renderMarkup = (options) =>
     `
 <div class="main-wrap">
 <div class="posts-wrap">
-    <div class="posts">
-    ${
-        addPosts()
-    }
+    <div class="posts" id="posts">
     </div>
 </div>
 
