@@ -10,7 +10,7 @@ const renderMarkup = (options) =>
         <div class="post__info-wrap">
             <img class="post__author-avatar" src="${options.imageAvatar}"></img>
             <div class="post__info">
-                <div class="post__author-name">${options.authorName}</div>
+                <div class="post__author-name">${options.name}</div>
                 <div class="post__date">
                     <div class="post__date-published">${options.datePubl}</div>
                     <div class="post__date-point">·</div>

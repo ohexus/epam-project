@@ -1,6 +1,6 @@
-function findUser(dataU, dataTarget) {
+function findUser(id, dataU) {
     for (let i = 0; i < dataU.length; i++) {
-        if (dataU[i].userId === dataTarget.userId) {
+        if (dataU[i].userId === id) {
             return i;
         }
     }
@@ -29,4 +29,13 @@ function findStrEnd(str) {
     }
 }
 
-export { findUser, findArticleSize, findStrEnd }
+function findCurrentPost(id, data) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].postId === id) {
+            return i;
+        }
+    }
+    return null;
+}
+
+export { findUser, findArticleSize, findStrEnd, findCurrentPost }

@@ -44,7 +44,7 @@ function addPosts() {
     })();
 
     for (let i = 0; i < items; i++) {
-        let currentUser = findUser(dataUsers, dataPosts[currentPost]);
+        let currentUser = findUser(dataPosts[currentPost].userId, dataUsers);
         let postSize = findArticleSize(dataPosts[currentPost].article.content);
 
         markup += new Post({
@@ -52,7 +52,7 @@ function addPosts() {
             postId: dataPosts[currentPost].postId,
             imagePost: dataPosts[currentPost].imageUrl,
             imageAvatar: dataUsers[currentUser].avatarUrl,
-            authorName: dataUsers[currentUser].name,
+            name: dataUsers[currentUser].name,
             datePubl: dataPosts[currentPost].date.datePublished,
             timePubl: dataPosts[currentPost].date.timePublished,
             title: dataPosts[currentPost].article.title,
