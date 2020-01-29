@@ -14,6 +14,9 @@ const renderMarkup = (options) =>
             <a href="${options.concerts}" class="nav-menu__link"><span>Concerts</span></a>
         </li>
         <li class="nav-menu__item">
+            <a href="${options.gallery}" class="nav-menu__link"><span>Gallery</span></a>
+        </li>
+        <li class="nav-menu__item">
             <a href="${options.reviews}" class="nav-menu__link"><span>Reviews</span></a>
         </li>
         <li class="nav-menu__item">
@@ -28,6 +31,7 @@ export class NavMenu extends Component {
         home: '',
         genres: '#genres',
         concerts: '#concerts',
+        gallery: '#gallery',
         reviews: '#reviews',
         interviews: '#interviews'
     }) {

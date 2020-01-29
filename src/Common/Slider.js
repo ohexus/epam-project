@@ -13,28 +13,31 @@ const renderMarkup = (options) =>
 
 export class Slider extends Component {
     constructor(options = {}) {
-        super(options, renderMarkup(options));
 
         let dataSlider = getDataSlider();
 
-        window.addEventListener('DOMContentLoaded', () => {
-            const sliderElem = document.querySelector('.slider');
-            const sliderPanel = sliderElem.querySelector('.slider-panel');
+        window.addEventListener('load', () => {
+            if (window.location.hash === '') {
+                const sliderElem = document.querySelector('.slider');
+                const sliderPanel = sliderElem.querySelector('.slider-panel');
 
-            for (let i = 0; i < dataSlider.length; i++) {
-                sliderElem.insertAdjacentHTML('afterbegin', new SliderItem({
-                    slideId: dataSlider[i].slideId,
-                    imageUrl: dataSlider[i].imageUrl,
-                    title: dataSlider[i].article.title,
-                    content: dataSlider[i].article.content
-                }).getMarkup());
-                sliderPanel.insertAdjacentHTML('beforeend', new SliderPanelDot({
-                    slideId: dataSlider[i].slideId,
-                }).getMarkup());
+                for (let i = 0; i < dataSlider.length; i++) {
+                    sliderElem.insertAdjacentHTML('afterbegin', new SliderItem({
+                        slideId: dataSlider[i].slideId,
+                        imageUrl: dataSlider[i].imageUrl,
+                        title: dataSlider[i].article.title,
+                        content: dataSlider[i].article.content
+                    }).getMarkup());
+                    sliderPanel.insertAdjacentHTML('beforeend', new SliderPanelDot({
+                        slideId: dataSlider[i].slideId,
+                    }).getMarkup());
+                }
+
+                sliderElem.getElementsByClassName('radio-slider')[0].setAttribute('checked', 'checked');
             }
-
-            sliderElem.getElementsByClassName('radio-slider')[0].setAttribute('checked', 'checked');
         });
+
+        super(options, renderMarkup(options));
     }
 
     addItems = () => {

@@ -45,7 +45,11 @@ export class MainPage extends Component {
         });
         moreBtn.addEventListener('click', () => {
             postsElem.insertAdjacentHTML("beforeend", addPosts());
+            this.changeContentHeight(postsAll, dataPosts);
             this.addLinks(postsAll);
+            if (postsAll.length === dataPosts.length) {
+                moreBtn.style.display = 'none';
+            }
         });
     }
 

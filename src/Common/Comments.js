@@ -19,9 +19,15 @@ export class Comments extends Component {
         super(options, renderMarkup(options));
 
         window.addEventListener('load', () => {
-            this.addComments();
+            if (window.location.hash.substr(1).split('/')[0] === 'post') {
+                this.addComments();
+            }
 
-            window.addEventListener('hashchange', this.addComments);
+            window.addEventListener('hashchange', () => {
+                if (window.location.hash.substr(1).split('/')[0] === 'post') {
+                    this.addComments();
+                }
+            });
         });
     }
 

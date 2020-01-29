@@ -9,10 +9,12 @@
     margin: 25px auto 10px;
     opacity: 1;
     box-shadow: 0px 5px 15px -7px rgba(0, 0, 0, 0.75);
+    .post__link {
+        height: 400px;
+        margin-bottom: 20px;
+    }
     .post__image {
         height: 100%;
-        margin-bottom: 20px;
-        max-height: 400px;
         object-position: center;
         position: relative;
     }
@@ -32,6 +34,9 @@
     }
     .post__date {
         font-size: 20px;
+    }
+    .post__description::after {
+        display: none;
     }
     .post__article {
         margin: 15px auto 30px;
