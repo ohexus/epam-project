@@ -1,5 +1,4 @@
 import { Component } from '../Core/Component.js';
-import { addPosts } from '../Core/AddPosts.js'
 import { ButtonMore } from './ButtonMore.js'
 
 const renderMarkup = (options) =>

@@ -4,6 +4,8 @@ import { Header } from '../Common/Header.js';
 import { Footer } from '../Common/Footer.js';
 import { MainPageContent } from '../Common/MainPageContent.js';
 import { findArticleSize, findStrEnd } from '../Core/SearchFunctions.js';
+import { getDataPosts } from '../Core/GetData.js';
+import { Slider } from '../Common/Slider.js';
 
 
 const renderMarkup = (options) =>
@@ -11,6 +13,9 @@ const renderMarkup = (options) =>
     <div class="page-wrap">
             ${
                 new Header().getMarkup()
+            }
+            ${
+                new Slider().getMarkup()
             }
             ${
                 new MainPageContent().getMarkup()
@@ -25,30 +30,26 @@ export class MainPage extends Component {
     constructor(options = {}) {
         super(options, renderMarkup(options));
 
-        const posts = this.element.querySelector('#posts');
+        let dataPosts = getDataPosts();
+        const postsElem = this.element.querySelector('#posts');
         const moreBtn = this.element.querySelector('#moreBtn');
+        const postsAll = postsElem.children;
 
         window.addEventListener('load', () => {
-            posts.insertAdjacentHTML("beforeend", addPosts());
-            this.addLinks(posts);
+            postsElem.insertAdjacentHTML("beforeend", addPosts());
+            this.changeContentHeight(postsAll, dataPosts);
+            this.addLinks(postsAll);
         });
-
+        window.addEventListener('resize', () => {
+            this.changeContentHeight(postsAll, dataPosts);
+        });
         moreBtn.addEventListener('click', () => {
-            posts.insertAdjacentHTML("beforeend", addPosts());
-            this.addLinks(posts);
+            postsElem.insertAdjacentHTML("beforeend", addPosts());
+            this.addLinks(postsAll);
         });
-        // posts.addEventListener('transitionend', () => {
-        //     this.changeContentHeight(postsAll, fullArticles);
-        // });
-        // window.addEventListener('resize', () => {
-        //     this.changeContentHeight(postsAll, fullArticles);
-        // });
-
     }
 
-    addLinks = (posts) => {
-        let postsAll = posts.children;
-
+    addLinks = (postsAll) => {
         for (let i = 0; i < postsAll.length; i++) {
             let postId = postsAll[i].querySelector('.post__link').dataset.id;
             postsAll[i].querySelector('.post__link').addEventListener('click', () => {
@@ -57,15 +58,15 @@ export class MainPage extends Component {
         }
     }
 
-    // changeContentHeight = (posts, articles) => {
-    //     for (let i = 0; i < posts.length; i++) {
-    //         const contentWrap = posts[i].querySelector('.post__content-wrap');
-    //         const content = posts[i].querySelector('.post__content');
-    //         content.textContent = articles[i];
-    //         while (content.offsetHeight > contentWrap.offsetHeight) {
-    //             content.textContent = findStrEnd(content.textContent);
-    //         }
-    //         posts[i].className = `post post-${findArticleSize(content.textContent)}`;
-    //     }
-    // }
+    changeContentHeight = (posts, articles) => {
+        for (let i = 0; i < posts.length; i++) {
+            const contentWrap = posts[i].querySelector('.post__content-wrap');
+            const content = posts[i].querySelector('.post__content');
+            // console.log(`article: ${articles[i].article.content}`);
+            content.textContent = articles[i].article.content;
+            while (content.offsetHeight > contentWrap.offsetHeight) {
+                content.textContent = findStrEnd(content.textContent);
+            }
+        }
+    }
 }

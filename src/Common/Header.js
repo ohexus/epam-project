@@ -1,6 +1,5 @@
 import { Component } from '../Core/Component.js';
 import { NavMenu } from '../Common/NavMenu.js';
-import { Slider } from '../Common/Slider.js';
 
 const renderMarkup = (options) =>
     `
@@ -15,7 +14,6 @@ const renderMarkup = (options) =>
         <div class="logo-wrap">
             <a class="logo" href="index.html">
                 <i class="logo__image"></i>
-                <span class="logo__name">BLOG</span>
             </a>
         </div>
 
@@ -27,12 +25,11 @@ const renderMarkup = (options) =>
     ${
         new NavMenu().getMarkup()
     }
-    ${
-        new Slider().getMarkup()
-    }
 </header>
 </div>
 `
+
+{ /* <span class="logo__name">BLOG</span> */ }
 
 export class Header extends Component {
     constructor(options = {}) {

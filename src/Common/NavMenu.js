@@ -8,12 +8,6 @@ const renderMarkup = (options) =>
             <a href="${options.home}" class="nav-menu__link"><span>Home</span></a>
         </li>
         <li class="nav-menu__item">
-            <a href="${options.blog}" class="nav-menu__link"><span>Blog</span></a>
-        </li>
-        <li class="nav-menu__item">
-            <a href="${options.categories}" class="nav-menu__link"><span>Categories</span></a>
-        </li>
-        <li class="nav-menu__item">
             <a href="${options.genres}" class="nav-menu__link"><span>Genres</span></a>
         </li>
         <li class="nav-menu__item">
@@ -22,6 +16,9 @@ const renderMarkup = (options) =>
         <li class="nav-menu__item">
             <a href="${options.reviews}" class="nav-menu__link"><span>Reviews</span></a>
         </li>
+        <li class="nav-menu__item">
+            <a href="${options.interviews}" class="nav-menu__link"><span>Interviews</span></a>
+        </li>
     </ul>
 </nav>
 `
@@ -29,11 +26,10 @@ const renderMarkup = (options) =>
 export class NavMenu extends Component {
     constructor(options = {
         home: '',
-        blog: '#blog',
-        categories: '#categories',
         genres: '#genres',
         concerts: '#concerts',
-        reviews: '#reviews'
+        reviews: '#reviews',
+        interviews: '#interviews'
     }) {
         super(options, renderMarkup(options));
     }

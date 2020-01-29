@@ -24,17 +24,17 @@ const renderMarkup = (options) =>
                 <p class="post__content">${options.content}</p>
             </div>
         </div>
-        <div class="post__footer">
-            <hr class="post__hr">
-            <div class="post__stats">
-                <div class="post__views">
-                    <span class="post__views-number">${options.views}</span>
-                    <span>views</span>
-                </div>
-                <div class="post__likes">
-                    <span class="post__likes-number">${options.likes}</span>
-                    <span>likes</span>
-                </div>
+    </div>
+    <div class="post__footer">
+        <div class="post__hr"></div>
+        <div class="post__stats">
+            <div class="post__views">
+                <span class="post__views-number">${options.views}</span>
+                <span>views</span>
+            </div>
+            <div class="post__likes">
+                <span class="post__likes-number">${options.likes}</span>
+                <span>likes</span>
             </div>
         </div>
     </div>
