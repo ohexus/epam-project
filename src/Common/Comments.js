@@ -1,6 +1,6 @@
 import { Component } from '../Core/Component.js';
 import { getDataComments, getDataUsers } from '../Core/GetData.js';
-import { findCurrentPost, findUser } from '../Core/SearchFunctions.js';
+import { findCurrentPost, findUser } from '../Core/Functions.js';
 import { Comment } from './Comment.js';
 
 const renderMarkup = (options) =>

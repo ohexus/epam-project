@@ -488,7 +488,12 @@ body {
         display: none;
     }
     .post__footer {
-        display: none;
+        bottom: -30px;
+        opacity: 0;
+    }
+    &:hover .post__footer {
+        bottom: 0;
+        opacity: 0.9;
     }
 }
 
@@ -597,6 +602,7 @@ body {
     left: 0;
     background-color: inherit;
     z-index: 10;
+    transition: 0.65s 0.1s;
 }
 
 .post__hr {

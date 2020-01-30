@@ -4,7 +4,7 @@ import { Footer } from '../Common/Footer.js';
 import { Post } from '../Common/Post.js';
 import { Comments } from '../Common/Comments.js';
 import { getDataPosts, getDataUsers } from '../Core/GetData.js';
-import { findUser, findArticleSize } from '../Core/SearchFunctions.js';
+import { findUser, findArticleSize } from '../Core/Functions.js';
 
 const renderMarkup = (options) =>
     `

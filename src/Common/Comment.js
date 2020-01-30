@@ -1,6 +1,5 @@
 import { Component } from '../Core/Component.js';
-import { getDataComments } from '../Core/GetData.js';
-import { findCurrentPost } from '../Core/SearchFunctions.js';
+import { findCurrentPost } from '../Core/Functions.js';
 
 const renderMarkup = (options) =>
     `<div class="comments__comment">

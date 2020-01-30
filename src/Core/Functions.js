@@ -38,4 +38,10 @@ function findCurrentPost(id, data) {
     return null;
 }
 
-export { findUser, findArticleSize, findStrEnd, findCurrentPost }
+function clearElement(e) {
+    while (e.firstChild) {
+        e.removeChild(e.firstChild);
+    }
+}
+
+export { findUser, findArticleSize, findStrEnd, findCurrentPost, clearElement }

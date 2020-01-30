@@ -3,7 +3,7 @@ import { Component } from '../Core/Component.js';
 import { Header } from '../Common/Header.js';
 import { Footer } from '../Common/Footer.js';
 import { MainPageContent } from '../Common/MainPageContent.js';
-import { findArticleSize, findStrEnd } from '../Core/SearchFunctions.js';
+import { findArticleSize, findStrEnd } from '../Core/Functions.js';
 import { getDataPosts } from '../Core/GetData.js';
 import { Slider } from '../Common/Slider.js';
 
