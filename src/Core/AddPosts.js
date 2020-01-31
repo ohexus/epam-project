@@ -5,51 +5,41 @@ import { findUser, findArticleSize } from './Functions.js';
 let dataPosts = getDataPosts();
 let dataUsers = getDataUsers();
 
-const itemsPerPage = 9;
+const itemsPerPage = 3;
 let postsFilled = 0;
 let currentPost = 0;
 
-let sortStyle = (a, b) => {
-    return a.stats.views - b.stats.views;
-}
-
-function addPosts(sortStyle) {
-
-    dataPosts = dataPosts.sort((a, b) => {
-        return a.stats.views - b.stats.views;
-    });
-    console.log(dataPosts);
+function addPosts(options) {
+    options.dataPosts = options.dataPosts ? options.dataPosts : getDataPosts();
+    options.dataUsers = options.dataUsers ? options.dataUsers : getDataUsers();
+    if (!options.postsFilled) options.postsFilled = postsFilled;
+    if (!options.currentPost) options.currentPost = currentPost;
 
     let markup = ``;
-    let items = (() => {
-        if ((dataPosts.length - postsFilled) >= itemsPerPage) {
-            return itemsPerPage;
-        } else {
-            return dataPosts.length - postsFilled;
-        }
-    })();
+    let items = (options.dataPosts.length - options.postsFilled) >= itemsPerPage ? itemsPerPage : (dataPosts.length - options.postsFilled);
 
     for (let i = 0; i < items; i++) {
-        let currentUser = findUser(dataPosts[currentPost].userId, dataUsers);
-        let postSize = findArticleSize(dataPosts[currentPost].article.content);
+        let currentUser = findUser(dataPosts[options.currentPost].userId, dataUsers);
+        let postSize = findArticleSize(dataPosts[options.currentPost].article.content);
 
         markup += new Post({
             size: postSize,
-            postId: dataPosts[currentPost].postId,
-            imagePost: dataPosts[currentPost].imageUrl,
+            postId: dataPosts[options.currentPost].postId,
+            imagePost: dataPosts[options.currentPost].imageUrl,
             imageAvatar: dataUsers[currentUser].avatarUrl,
             name: dataUsers[currentUser].name,
-            datePubl: dataPosts[currentPost].date.datePublished,
-            timePubl: dataPosts[currentPost].date.timePublished,
-            title: dataPosts[currentPost].article.title,
-            content: dataPosts[currentPost].article.content,
-            views: dataPosts[currentPost].stats.views,
-            likes: dataPosts[currentPost].stats.likes
+            datePubl: dataPosts[options.currentPost].date.datePublished,
+            timePubl: dataPosts[options.currentPost].date.timePublished,
+            title: dataPosts[options.currentPost].article.title,
+            content: dataPosts[options.currentPost].article.content,
+            views: dataPosts[options.currentPost].stats.views,
+            likes: dataPosts[options.currentPost].stats.likes
         }).getMarkup();
 
-        currentPost++;
-        postsFilled++;
+        options.currentPost++;
+        options.postsFilled++;
     }
+
     return markup;
 }
 

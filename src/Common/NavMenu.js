@@ -1,7 +1,6 @@
 import { Component } from '../Core/Component.js';
 
-const renderMarkup = (options) =>
-    `
+const renderMarkup = (options) => `
 <nav class="nav-menu-wrap">
     <ul class="nav-menu">
         <li class="nav-menu__item">
