@@ -2,8 +2,8 @@ import { Component } from '../Core/Component.js';
 
 const renderMarkup = (options) => `
     <div class="sort-filter">
-        <select name="sort" id="sortFilter">
-            <option disable selected>Sort by</option>
+        <select name="sort" id="filterSort">
+            <option value="default" selected>Sort by...</option>
             <option value="pop">Most popular</option>
             <option value="likes">Most liked</option>
             <option value="new">New</option>

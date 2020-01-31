@@ -16,24 +16,25 @@ function addPosts(options) {
     if (!options.currentPost) options.currentPost = currentPost;
 
     let markup = ``;
-    let items = (options.dataPosts.length - options.postsFilled) >= itemsPerPage ? itemsPerPage : (dataPosts.length - options.postsFilled);
+    let items = (options.dataPosts.length - options.postsFilled) >= itemsPerPage ? itemsPerPage : (options.dataPosts.length - options.postsFilled);
 
     for (let i = 0; i < items; i++) {
-        let currentUser = findUser(dataPosts[options.currentPost].userId, dataUsers);
-        let postSize = findArticleSize(dataPosts[options.currentPost].article.content);
+        let currentPost = options.currentPost;
+        let currentUser = findUser(options.dataPosts[currentPost].userId, dataUsers);
+        let postSize = findArticleSize(options.dataPosts[currentPost].article.content);
 
         markup += new Post({
             size: postSize,
-            postId: dataPosts[options.currentPost].postId,
-            imagePost: dataPosts[options.currentPost].imageUrl,
-            imageAvatar: dataUsers[currentUser].avatarUrl,
-            name: dataUsers[currentUser].name,
-            datePubl: dataPosts[options.currentPost].date.datePublished,
-            timePubl: dataPosts[options.currentPost].date.timePublished,
-            title: dataPosts[options.currentPost].article.title,
-            content: dataPosts[options.currentPost].article.content,
-            views: dataPosts[options.currentPost].stats.views,
-            likes: dataPosts[options.currentPost].stats.likes
+            postId: options.dataPosts[currentPost].postId,
+            imagePost: options.dataPosts[currentPost].imageUrl,
+            imageAvatar: options.dataUsers[currentUser].avatarUrl,
+            login: options.dataUsers[currentUser].login,
+            datePubl: options.dataPosts[currentPost].date.datePublished,
+            timePubl: options.dataPosts[currentPost].date.timePublished,
+            title: options.dataPosts[currentPost].article.title,
+            content: options.dataPosts[currentPost].article.content,
+            views: options.dataPosts[currentPost].stats.views,
+            likes: options.dataPosts[currentPost].stats.likes
         }).getMarkup();
 
         options.currentPost++;

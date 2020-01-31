@@ -1,59 +1,73 @@
 {
     "dataUsers": [{
         "userId": 0,
-        "name": "Idllo",
+        "login": "Idllo",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 1,
-        "name": "Turronyni",
+        "login": "Turronyni",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 2,
-        "name": "Jierall",
+        "login": "Jierall",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 3,
-        "name": "Ubi",
+        "login": "Ubi",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 4,
-        "name": "Qialluc",
+        "login": "Qialluc",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 5,
-        "name": "Ubi",
+        "login": "Ubis",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 6,
-        "name": "Vana",
+        "login": "Vana",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 7,
-        "name": "Hireus",
+        "login": "Hireus",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 8,
-        "name": "Tamamian",
+        "login": "Tamamian",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 9,
-        "name": "Nened",
+        "login": "Nened",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 10,
-        "name": "Lybie",
+        "login": "Lybie",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 11,
-        "name": "Ubicorn",
+        "login": "Ubicorn",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 12,
-        "name": "Ybrenerit",
+        "login": "Ybrenerit",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 13,
-        "name": "Zerod",
+        "login": "Zerod",
+        "password": "12345",
         "avatarUrl": "src/Images/user-icon.svg"
     }]
 }

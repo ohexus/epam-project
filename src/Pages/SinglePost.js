@@ -4,7 +4,7 @@ import { Footer } from '../Common/Footer.js';
 import { Post } from '../Common/Post.js';
 import { Comments } from '../Common/Comments.js';
 import { getDataPosts, getDataUsers } from '../Core/GetData.js';
-import { findUser, findArticleSize } from '../Core/Functions.js';
+import { findUser } from '../Core/Functions.js';
 
 const renderMarkup = (options) =>
     `
@@ -56,7 +56,7 @@ export class SinglePost extends Component {
                 postId: dataPosts[currentPost].postId,
                 imagePost: dataPosts[currentPost].imageUrl,
                 imageAvatar: dataUsers[currentUser].avatarUrl,
-                name: dataUsers[currentUser].name,
+                login: dataUsers[currentUser].login,
                 datePubl: dataPosts[currentPost].date.datePublished,
                 timePubl: dataPosts[currentPost].date.timePublished,
                 title: dataPosts[currentPost].article.title,

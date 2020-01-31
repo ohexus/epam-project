@@ -61,14 +61,86 @@ body {
     height: 80px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
     &>* {
         width: 30%;
     }
 }
 
 
+/* ----------AUTHORIZATION---------- */
+
+.auth-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sign-checkbox {
+    display: none;
+}
+
+.sign-label {
+    @extend %flexx-center;
+    width: 70px;
+    height: 35px;
+    cursor: pointer;
+    transition: 0.75s;
+    background: rgba(163, 208, 195, 0.7);
+    border-radius: 10px;
+}
+
+.sign-form {
+    position: absolute;
+    top: -200%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    background: #bbbbbb;
+    padding: 5px 5%;
+    box-sizing: border-box;
+    transition: 1s;
+    z-index: 100;
+    .sign__form-header {
+        margin: 10px 0 5px;
+        font-size: 1.1em;
+    }
+    input {
+        outline: none;
+        border: none;
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin: 5px 0;
+        padding-left: 10px;
+        box-sizing: border-box;
+    }
+    .sign__form-submit-btn {
+        width: max-content;
+        padding: 8px 16px;
+        margin: 10px 0;
+    }
+}
+
+.sign-checkbox:checked {
+    &+.sign-form {
+        opacity: 1;
+        top: 100%;
+    }
+}
+
+
 /* ----------LOGO---------- */
+
+.logo-wrap {
+    @extend %flexx-center;
+}
 
 .logo {
     @extend %rem-marpad,
@@ -78,11 +150,59 @@ body {
 .logo__image {
     width: 55px;
     height: 55px;
-    background: center / cover url(../Images/logo.png);
+    background: center / cover url(../Images/logo.svg);
 }
 
 .logo__name {
     margin: 0 15px;
+}
+
+
+/* ----------SEARCH---------- */
+
+.search-wrap {
+    @extend %flexx-center;
+}
+
+.search {
+    position: relative;
+    width: 80%;
+    background: #A3D0C3;
+    border-radius: 10px;
+}
+
+.search__input,
+.search__button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.search__input {
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+}
+
+.search__btn {
+    @extend %flexx-center,
+    %rem-marpad;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    &::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: no-repeat center/contain url(../Images/search.png);
+        filter: invert(1);
+    }
 }
 
 
@@ -144,49 +264,6 @@ body {
     }
     // &:hover ~ .hover-line{
     // }
-}
-
-
-/* -----SEARCH----- */
-
-.search {
-    position: relative;
-    background: #A3D0C3;
-    border-radius: 10px;
-}
-
-.search__input,
-.search__button {
-    border: none;
-    outline: none;
-    background: transparent;
-}
-
-.search__input {
-    width: 100%;
-    height: 40px;
-    padding-left: 15px;
-}
-
-.search__btn {
-    @extend %flexx-center,
-    %rem-marpad;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    &::after {
-        content: '';
-        display: block;
-        width: 24px;
-        height: 24px;
-        background: no-repeat center/contain url(../Images/search.png);
-        filter: invert(1);
-    }
 }
 
 
@@ -355,6 +432,24 @@ body {
 }
 
 
+/* ----------MORE-BTN---------- */
+
+.more-btn-wrap {
+    @extend %flexx-center;
+    width: 100%;
+    height: 70px;
+}
+
+.more-btn {
+    padding: 10px 20px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: #3578ac;
+    border-radius: 5px;
+}
+
+
 /* ----------POSTS---------- */
 
 // .posts-wrap {}
@@ -380,7 +475,7 @@ body {
     transition: 0.15s linear;
     &:hover {
         opacity: 1;
-        box-shadow: 0px 5px 15px -7px rgba(0, 0, 0, 0.75);
+        box-shadow: 2px 5px 15px -7px rgba(0, 0, 0, 0.75);
     }
 }
 
@@ -476,16 +571,6 @@ body {
     .post__content-wrap {
         height: 370px;
     }
-}
-
-.more-btn-wrap {
-    width: max-content;
-    margin: 0 auto;
-    padding: 10px 0;
-}
-
-.more-btn {
-    padding: 8px 16px;
 }
 
 

@@ -10,40 +10,63 @@ export class PostsPage extends Component {
     constructor(options = {}) {
         super(options, renderMarkup(options));
 
-        if (options.postsElem) {
-            options.postsFilled = 0;
-            options.currentPost = 0;
-            options.moreBtn.style.display = (this.element.children.length === options.dataPosts.length) ? 'none' : 'block';
-            this.element.insertAdjacentHTML("beforeend", addPosts(options));
-            this.changeContentHeight(this.element.children, options.dataPosts);
-            this.addLinks(this.element.children);
-        }
-
         if (window.location.hash.substr(1).split('/')[0] === '') {
+            this.checkPosts(options);
+            window.addEventListener('load', () => this.posts(options));
+        } else {
             window.addEventListener('load', () => {
-                let postsElem = document.getElementById('posts');
-                options.postsElem = postsElem;
-
-                postsElem.insertAdjacentHTML("beforeend", addPosts(options));
-                this.changeContentHeight(postsElem.children, options.dataPosts);
-                this.addLinks(postsElem.children);
-
-                const moreBtn = document.getElementById('moreBtn');
-                options.moreBtn = moreBtn;
-                moreBtn.addEventListener('click', () => {
-                    postsElem = document.getElementById('posts');
-                    options.postsElem = postsElem;
-
-                    postsElem.insertAdjacentHTML("beforeend", addPosts(options));
-                    this.changeContentHeight(postsElem.children, options.dataPosts);
-                    this.addLinks(postsElem.children);
-                    options.moreBtn.style.display = (postsElem.children.length === options.dataPosts.length) ? 'none' : 'block';
-                });
-                window.addEventListener('resize', () => {
-                    this.changeContentHeight(postsElem.children, options.dataPosts);
+                window.addEventListener('hashchange', () => {
+                    if (window.location.hash.substr(1).split('/')[0] === '') {
+                        this.checkPosts(options);
+                        this.posts(options);
+                    }
                 });
             });
         }
+    }
+
+    checkPosts = (options) => {
+        if (options.postsElem) {
+            options.postsFilled = 0;
+            options.currentPost = 0;
+            options.postsElem = this.element;
+            options.postsElem.insertAdjacentHTML("beforeend", addPosts(options));
+            options.moreBtn.style.display = (this.element.children.length === options.dataPosts.length) ? 'none' : 'block';
+        }
+    }
+
+    posts = (options) => {
+        let postsElem = document.getElementById('posts');
+
+        postsElem.insertAdjacentHTML("beforeend", addPosts(options));
+        this.changeContentHeight(postsElem.children, options.dataPosts);
+        this.addLinks(postsElem.children);
+        options.postsElem = postsElem;
+
+        document.querySelector('#filtersForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const posts = document.querySelector('.posts-wrap');
+            clearElement(posts);
+            posts.appendChild(new PostsPage(options).getElement());
+
+            options.postsElem = postsElem = document.getElementById('posts');
+            this.changeContentHeight(options.postsElem.children, options.dataPosts);
+            this.addLinks(options.postsElem.children);
+        });
+
+        const moreBtn = document.getElementById('moreBtn');
+        options.moreBtn = moreBtn;
+        moreBtn.addEventListener('click', () => {
+            postsElem = document.getElementById('posts');
+            postsElem.insertAdjacentHTML("beforeend", addPosts(options));
+            this.changeContentHeight(postsElem.children, options.dataPosts);
+            this.addLinks(postsElem.children);
+            options.moreBtn.style.display = (postsElem.children.length === options.dataPosts.length) ? 'none' : 'block';
+        });
+        window.addEventListener('resize', () => {
+            this.changeContentHeight(postsElem.children, options.dataPosts);
+        });
     }
 
     addLinks = (posts) => {

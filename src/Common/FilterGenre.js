@@ -2,10 +2,11 @@ import { Component } from '../Core/Component.js';
 
 const renderMarkup = (options) => `
     <div class="genre-filter">
-        <select name="genre" id="genre-filter">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
+        <select name="genre" id="filterGenre">
+            <option value="all" selected>All</option>
+            <option value="electronic">Electronic</option>
+            <option value="jazz">Jazz</option>
+            <option value="blues">Blues</option>
         </select>
     </div>
 `
