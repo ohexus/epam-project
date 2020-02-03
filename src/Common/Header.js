@@ -5,12 +5,11 @@ import { Authorization } from './Authorization.js';
 const renderMarkup = (options) =>
     `
 <div class="header-wrap">
-<header class="header">
+<header class="header" id="header">
     <div class="header-row">
         ${
             new Authorization().getMarkup()
         }
-
         <div class="logo-wrap">
             <a class="logo" href="index.html">
                 <i class="logo__image"></i>
@@ -34,5 +33,9 @@ const renderMarkup = (options) =>
 export class Header extends Component {
     constructor(options = {}) {
         super(options, renderMarkup(options));
+        window.addEventListener('load', () => {
+            console.log('load');
+        });
+
     }
 }

@@ -24,6 +24,9 @@ const renderMarkup = (options) => `
 `
 
 export class MainPage extends Component {
+
+
+
     constructor(options = {}) {
         const MainPageCont = new MainPageContent(options);
         options.MainPageCont = MainPageCont;

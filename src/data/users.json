@@ -1,73 +1,87 @@
 {
     "dataUsers": [{
         "userId": 0,
-        "login": "Idllo",
-        "password": "12345",
+        "login": "admin",
+        "password": "admin",
+        "authority": "admin",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 1,
         "login": "Turronyni",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 2,
-        "login": "Jierall",
+        "login": "Idllo",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 3,
         "login": "Ubi",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 4,
         "login": "Qialluc",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 5,
         "login": "Ubis",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 6,
         "login": "Vana",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 7,
         "login": "Hireus",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 8,
         "login": "Tamamian",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 9,
         "login": "Nened",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 10,
         "login": "Lybie",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 11,
         "login": "Ubicorn",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 12,
         "login": "Ybrenerit",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }, {
         "userId": 13,
         "login": "Zerod",
         "password": "12345",
+        "authority": "user",
         "avatarUrl": "src/Images/user-icon.svg"
     }]
 }

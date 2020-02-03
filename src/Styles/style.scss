@@ -1,8 +1,10 @@
 /* ---------------GENERAL--------------- */
 
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 $color-aliceblue: #F0F8FF;
 $color-linen: #FAF0E6;
-%rem-marpad {
+%remove-marpad {
     margin: 0;
     padding: 0;
 }
@@ -19,7 +21,7 @@ $color-linen: #FAF0E6;
 }
 
 ul {
-    @extend %rem-marpad;
+    @extend %remove-marpad;
     list-style: none;
 }
 
@@ -37,13 +39,24 @@ html,
 body,
 .page-wrap,
 .slider-wrap {
-    @extend %rem-marpad,
+    @extend %remove-marpad,
     %fill-parent;
     max-width: 100%;
 }
 
 body {
     background: $color-linen;
+}
+
+body,
+input {
+    font-family: 'Muli', sans-serif;
+}
+
+.header,
+.footer,
+.slider {
+    font-family: 'Raleway', sans-serif;
 }
 
 
@@ -70,30 +83,33 @@ body {
 
 /* ----------AUTHORIZATION---------- */
 
-.auth-wrap {
+.auth {
+    @extend %flexx-center;
     position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
-.sign-checkbox {
+.auth__checkbox {
     display: none;
 }
 
-.sign-label {
+.auth__label {
     @extend %flexx-center;
-    width: 70px;
-    height: 35px;
+    width: 80px;
+    height: 40px;
     cursor: pointer;
     transition: 0.75s;
     background: rgba(163, 208, 195, 0.7);
-    border-radius: 10px;
+    &:first-of-type {
+        border-radius: 7px 0 0 7px;
+    }
+    &:last-of-type {
+        border-radius: 0 7px 7px 0;
+    }
 }
 
-.sign-form {
+.auth-form {
     position: absolute;
-    top: -200%;
+    top: -300px;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -101,38 +117,126 @@ body {
     align-items: center;
     width: 100%;
     height: auto;
-    opacity: 0;
-    background: #bbbbbb;
     padding: 5px 5%;
     box-sizing: border-box;
+    background: #bbbbbb;
+    border-radius: 2px;
+    opacity: 0;
     transition: 1s;
     z-index: 100;
-    .sign__form-header {
-        margin: 10px 0 5px;
-        font-size: 1.1em;
-    }
-    input {
-        outline: none;
-        border: none;
-        display: block;
+    &>input {
+        outline: 0;
+        border: 0;
         width: 100%;
         height: 30px;
         margin: 5px 0;
         padding-left: 10px;
         box-sizing: border-box;
-    }
-    .sign__form-submit-btn {
-        width: max-content;
-        padding: 8px 16px;
-        margin: 10px 0;
+        background: #F5F5F5;
     }
 }
 
-.sign-checkbox:checked {
-    &+.sign-form {
+.auth-form__login,
+.auth-form__password {
+    transition: 0.25s;
+}
+
+.auth-form__panel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.auth-form__password-checkbox {
+    @extend %remove-marpad;
+    position: relative;
+    width: 25px;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.2s;
+        background: #F5F5F5;
+    }
+    &:hover::before {
+        background: #FAF0E6;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 5px;
+        border-left: 2px solid #483D8B;
+        border-bottom: 2px solid #483D8B;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        opacity: 0;
+        transition: 0.2s;
+    }
+    &:checked::after {
+        opacity: 1;
+    }
+}
+
+.auth-form__password-label {
+    width: 40%;
+    text-align: start;
+    padding: 0 10px;
+    font-size: 12px;
+    font-family: 'Muli', sans-serif;
+}
+
+.auth-form__submit {
+    width: 50%;
+    height: 30px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: rgba(53, 120, 172, 0.7);
+    transition: 0.3s;
+    &:hover {
+        background: rgba(245, 245, 245, 0.7);
+    }
+}
+
+.auth-form__label {
+    margin: 10px 0 0;
+    font-size: 1.1em;
+    color: #483D8B;
+}
+
+.auth__checkbox:checked {
+    &~.auth-form {
         opacity: 1;
         top: 100%;
     }
+    &+.auth__label {
+        background: #FAF0E6;
+        box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+    }
+}
+
+
+/* -----USER-PANEL----- */
+
+.user-panel {
+    @extend %flexx-center;
+}
+
+.user-panel__avatar {
+    height: 75%;
+}
+
+.user-panel__name {
+    margin-left: 15px;
+    font-size: 30px;
 }
 
 
@@ -143,7 +247,7 @@ body {
 }
 
 .logo {
-    @extend %rem-marpad,
+    @extend %remove-marpad,
     %flexx-center;
 }
 
@@ -186,7 +290,7 @@ body {
 
 .search__btn {
     @extend %flexx-center,
-    %rem-marpad;
+    %remove-marpad;
     width: 40px;
     height: 40px;
     position: absolute;
@@ -229,7 +333,7 @@ body {
         border: none;
     }
     a {
-        @extend %rem-marpad,
+        @extend %remove-marpad,
         %fill-parent,
         %flexx-center;
         text-decoration: none;
@@ -262,8 +366,6 @@ body {
         left: 50%;
         opacity: 1;
     }
-    // &:hover ~ .hover-line{
-    // }
 }
 
 
@@ -274,6 +376,7 @@ body {
     width: 100%;
     height: 450px;
     overflow: hidden;
+    background: rgba(53, 120, 172, 0.7);
 }
 
 .slider__item {
@@ -293,19 +396,20 @@ body {
 }
 
 .slider__item-content {
-    position: absolute;
-    top: 200%;
-    left: 125%;
-    width: 75%;
-    height: 380px;
-    padding: 0 0 0 50px;
-    background: rgba(18, 127, 211, 0.9);
-    border-radius: 3px 0 0 0;
-    transition: 0.75s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    position: absolute;
+    top: 70px;
+    left: 300%;
+    width: 75%;
+    height: 380px;
+    padding: 0 0 0 50px;
+    background: rgba(18, 127, 211, 0.9);
+    background: linear-gradient(135deg, rgba(18, 127, 211, 0.2) 0%, rgba(18, 127, 211, 0.5) 100%);
+    border-radius: 3px 0 0 0;
+    transition: 0.75s ease-in-out;
 }
 
 .item-content__title {
@@ -330,8 +434,15 @@ body {
     opacity: 1;
     left: 0;
     .slider__item-content {
-        top: 70px;
-        left: 25%;
+        left: 85%;
+        &:hover {
+            left: 25%;
+        }
+    }
+    .slider__item-image:hover+.slider__item-content {
+        transition: 0.75s 0.75s;
+        opacity: 0.25;
+        left: 90%;
     }
 }
 
@@ -345,10 +456,6 @@ body {
 .slider__item-image {
     object-fit: cover;
     object-position: center;
-    &:hover+.slider__item-content {
-        transition: 0.75s 0.75s;
-        opacity: 0;
-    }
 }
 
 .slider-panel {
@@ -420,7 +527,7 @@ body {
 
 .filters-wrap {
     height: 100px;
-    background: rgb(187, 205, 221);
+    background: rgba(53, 120, 172, 0.7)
 }
 
 .filters {
@@ -429,24 +536,6 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-}
-
-
-/* ----------MORE-BTN---------- */
-
-.more-btn-wrap {
-    @extend %flexx-center;
-    width: 100%;
-    height: 70px;
-}
-
-.more-btn {
-    padding: 10px 20px;
-    outline: 0;
-    border: 0;
-    cursor: pointer;
-    background: #3578ac;
-    border-radius: 5px;
 }
 
 
@@ -618,11 +707,11 @@ body {
 /* -----ARTICLE----- */
 
 .post__article {
-    margin: 5px auto 10px;
+    margin: 10px auto;
 }
 
 .post__title {
-    margin: 0 auto 10px;
+    margin: 15px auto 10px;
     font-size: 36px;
     text-align: center;
 }
@@ -683,14 +772,32 @@ body {
 }
 
 
+/* ----------MORE-BTN---------- */
+
+.more-btn-wrap {
+    @extend %flexx-center;
+    width: 100%;
+    height: 70px;
+}
+
+.more-btn {
+    padding: 10px 20px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: rgba(53, 120, 172, 0.7);
+    border-radius: 5px;
+}
+
+
 /* ---------------FOOTER--------------- */
 
 .footer-wrap {
-    @extend %rem-marpad;
+    @extend %remove-marpad;
     padding: 40px 0 0;
     background: #1d2b36;
     .footer {
-        @extend %rem-marpad,
+        @extend %remove-marpad,
         %fill-parent,
         %flexx-center;
         flex-wrap: wrap;
@@ -722,12 +829,12 @@ body {
     width: 75%;
     margin-bottom: 20px;
     .item {
-        @extend %rem-marpad;
+        @extend %remove-marpad;
         width: 25%;
     }
 }
 
-.signature {
+.authature {
     @extend %flexx-center;
     justify-content: space-between;
     width: 100%;
@@ -737,7 +844,7 @@ body {
 
 /* footer icons */
 
-.signature__socs {
+.authature__socs {
     width: 40%;
     ul {
         @extend %flexx-center;

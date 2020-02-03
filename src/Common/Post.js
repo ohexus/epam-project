@@ -1,14 +1,13 @@
 import { Component } from '../Core/Component.js';
 
-const renderMarkup = (options) =>
-    `
+const renderMarkup = (options) => `
     <div class="post post-${options.size}">
     <a class="post__link" data-id="${options.postId}">
         <img class="post__image" src="${options.imagePost}"></img>
     </a>
     <div class="post__description">
         <div class="post__info-wrap">
-            <img class="post__author-avatar" src="${options.imageAvatar}"></img>
+            <img class="post__author-avatar" src="${options.imageAvatar}">
             <div class="post__info">
                 <div class="post__author-name">${options.login}</div>
                 <div class="post__date">
@@ -56,11 +55,5 @@ export class Post extends Component {
         likes: ''
     }) {
         super(options, renderMarkup(options));
-
-        window.addEventListener('load', this.log);
     }
-
-    log = () => {
-        console.log('Post');
-    };
 }

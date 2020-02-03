@@ -9,9 +9,6 @@ import { findUser } from '../Core/Functions.js';
 const renderMarkup = (options) =>
     `
     <div class="page-wrap">
-            ${
-                new Header().getMarkup()
-            }
             <div id="postWrap">
             ${
                 new Post().getMarkup()
@@ -32,6 +29,19 @@ export class SinglePost extends Component {
 
         window.addEventListener('load', this.routeHash);
         window.addEventListener('hashchange', this.routeHash);
+
+        window.addEventListener('load', () => {
+            if (window.location.hash.substr(1).split('/')[0] === 'post') {
+                document.querySelector('.page-wrap').insertAdjacentHTML('afterbegin', new Header().getMarkup());
+            } else {
+                window.addEventListener('hashchange', () => {
+                    if (window.location.hash.substr(1).split('/')[0] === 'post') {
+                        if (document.querySelector('.header-wrap')) document.querySelector('.header-wrap').remove();
+                        document.querySelector('.page-wrap').insertAdjacentHTML('afterbegin', new Header().getMarkup());
+                    }
+                });
+            }
+        });
     }
 
     routeHash = () => {
