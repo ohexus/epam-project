@@ -16,7 +16,7 @@ const renderMarkup = (options) => `
     <div class="filters__topic-filter">
 
     </div>
-    <input type="submit">
+    <input type="submit" value="Filter posts">
 </form> 
 `
 
@@ -24,20 +24,22 @@ export class FiltersPanel extends Component {
     constructor(options = {}) {
         super(options, renderMarkup(options));
 
-        if (window.location.hash.substr(1).split('/')[0] !== '') {
+        options.countListeners = 0;
+
+        if (window.location.hash.substr(1).split('/')[0] === '') {
+            window.addEventListener('load', () => this.filtering(options));
+        } else {
             window.addEventListener('load', () => {
                 window.addEventListener('hashchange', () => {
                     if (window.location.hash.substr(1).split('/')[0] === '') {
-                        this.sort(options);
+                        this.filtering(options);
                     }
                 });
             });
-        } else {
-            window.addEventListener('load', () => this.sort(options));
         }
     }
 
-    sort = (options) => {
+    filtering = (options) => {
         const filtersElem = document.querySelector('.filters');
         const sortElem = filtersElem.querySelector('.filters__sort-filter');
         const genreElem = filtersElem.querySelector('.filters__genre-filter');
@@ -54,12 +56,18 @@ export class FiltersPanel extends Component {
         let genreSelect = genreElem.querySelector('#filterGenre');
         let topicSelect = topicElem.querySelector('#filterTopic');
 
-        document.querySelector('#filtersForm').addEventListener('change', () => {
-            options.dataPosts = getDataPosts();
-            this.filterByGenre(genreSelect, options);
-            this.filterByTopic(topicSelect, options);
-            this.sortPosts(sortSelect, options);
-        });
+        if (options.countListeners === 0) {
+            document.querySelector('#filtersForm').addEventListener('change', () => {
+                console.log('change');
+                options.dataPosts = getDataPosts();
+                console.log(options.dataPosts);
+                this.filterByGenre(genreSelect, options);
+                this.filterByTopic(topicSelect, options);
+                this.sortPosts(sortSelect, options);
+                console.log(options.dataPosts);
+            });
+            options.countListeners++;
+        }
     }
 
     sortPosts = (elem, options) => {

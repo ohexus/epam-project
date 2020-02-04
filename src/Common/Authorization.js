@@ -1,6 +1,6 @@
 import { Component } from '../Core/Component.js';
 import { AuthorizationForm } from './AuthorizationForm.js';
-import { findUser, clearElement } from '../Core/Functions.js';
+import { findUser, clearElement, findUserByLogin } from '../Core/Functions.js';
 import { getDataUsers } from '../Core/GetData.js';
 import { UserPanel } from './UserPanel.js';
 
@@ -20,8 +20,12 @@ export class Authorization extends Component {
     constructor(options) {
         super(options, renderMarkup(options));
 
-        window.addEventListener('load', this.watchForm);
-        window.addEventListener('hashchange', this.watchForm);
+        window.addEventListener('load', () => {
+            this.watchForm();
+            window.addEventListener('hashchange', () => {
+                this.watchForm();
+            });
+        });
     }
 
     watchForm = () => {
@@ -87,15 +91,18 @@ export class Authorization extends Component {
     }
 
     logIn = (login) => {
+        localStorage.setItem('userStatus', 'active');
         localStorage.setItem('activeUser', login);
         let data = getDataUsers();
-        let current = this.findUserInStorage(login, data);
+        let current = findUserByLogin(login, data);
         this.options = {
             avatarUrl: current ? data[current].avatarUrl : 'src/Images/user-icon.svg',
             login: login
+        };
+        if (document.querySelector('.auth')) {
+            document.querySelector('.auth').remove();
+            document.querySelector('.header-row').insertAdjacentHTML('afterbegin', new UserPanel(this.options).getMarkup());
         }
-        document.querySelector('.auth').remove();
-        document.querySelector('.header-row').insertAdjacentHTML('afterbegin', new UserPanel(this.options).getMarkup());
     }
 
     signInCheck = (login, password, users) => {
@@ -112,7 +119,7 @@ export class Authorization extends Component {
     }
 
     signUpCheck = (login, password, users) => {
-        if (this.findUserInStorage(login, users) || this.findUserInStorage(login, users) === 0) {
+        if (findUserByLogin(login, users) || this.findUserByLogin(login, users) === 0) {
             this.inputAnimation(document.querySelector('#authLogin'), 'Username is already taken!');
             return false
         } else {
@@ -125,15 +132,6 @@ export class Authorization extends Component {
             localStorage.setItem('activeUser', login);
             return true;
         }
-    }
-
-    findUserInStorage = (login, data) => {
-        for (let i = 0; i < data.length; i++) {
-            if (login.toLowerCase() === data[i].login.toLowerCase()) {
-                return i
-            }
-        }
-        return false
     }
 
     showPassword = (elem) => {

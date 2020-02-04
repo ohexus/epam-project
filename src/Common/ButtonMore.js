@@ -2,7 +2,7 @@ import { Component } from '../Core/Component.js';
 
 const renderMarkup = (options) =>
     `
-    <button type="button" class="more-btn" id="moreBtn">View more...</button>
+    <input type="button" class="more-btn" id="moreBtn" value="View more...">
 `
 
 export class ButtonMore extends Component {

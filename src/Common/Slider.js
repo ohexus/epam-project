@@ -29,22 +29,24 @@ export class Slider extends Component {
     }
 
     addItems = () => {
-        let dataSlider = getDataSlider();
-        let sliderElem = document.querySelector('.slider');
-        let sliderPanel = sliderElem.querySelector('.slider-panel');
+        if (document.querySelector('.slider-panel').children.length === 0) {
+            let dataSlider = getDataSlider();
+            let sliderElem = document.querySelector('.slider');
+            let sliderPanel = sliderElem.querySelector('.slider-panel');
 
-        for (let i = 0; i < dataSlider.length; i++) {
-            sliderElem.insertAdjacentHTML('afterbegin', new SliderItem({
-                slideId: dataSlider[i].slideId,
-                imageUrl: dataSlider[i].imageUrl,
-                title: dataSlider[i].article.title,
-                content: dataSlider[i].article.content
-            }).getMarkup());
-            sliderPanel.insertAdjacentHTML('beforeend', new SliderPanelDot({
-                slideId: dataSlider[i].slideId,
-            }).getMarkup());
+            for (let i = 0; i < dataSlider.length; i++) {
+                sliderElem.insertAdjacentHTML('afterbegin', new SliderItem({
+                    slideId: dataSlider[i].slideId,
+                    imageUrl: dataSlider[i].imageUrl,
+                    title: dataSlider[i].article.title,
+                    content: dataSlider[i].article.content
+                }).getMarkup());
+                sliderPanel.insertAdjacentHTML('beforeend', new SliderPanelDot({
+                    slideId: dataSlider[i].slideId,
+                }).getMarkup());
+            }
+
+            sliderElem.getElementsByClassName('radio-slider')[0].setAttribute('checked', 'checked');
         }
-
-        sliderElem.getElementsByClassName('radio-slider')[0].setAttribute('checked', 'checked');
     }
 }

@@ -6,6 +6,15 @@ function findUser(id, dataU) {
     }
 }
 
+function findUserByLogin(login, data) {
+    for (let i = 0; i < data.length; i++) {
+        if (login.toLowerCase() === data[i].login.toLowerCase()) {
+            return i
+        }
+    }
+    return false
+}
+
 function findArticleSize(article) {
     if (!article) {
         return 'small';
@@ -44,4 +53,4 @@ function clearElement(e) {
     }
 }
 
-export { findUser, findArticleSize, findStrEnd, findCurrentPost, clearElement }
+export { findUser, findUserByLogin, findArticleSize, findStrEnd, findCurrentPost, clearElement }

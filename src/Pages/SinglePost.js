@@ -6,20 +6,22 @@ import { Comments } from '../Common/Comments.js';
 import { getDataPosts, getDataUsers } from '../Core/GetData.js';
 import { findUser } from '../Core/Functions.js';
 
-const renderMarkup = (options) =>
-    `
+const renderMarkup = (options) => `
     <div class="page-wrap">
-            <div id="postWrap">
-            ${
-                new Post().getMarkup()
-            }
-            </div>
-            ${
-                new Comments().getMarkup()
-            }
-            ${
-                new Footer().getMarkup()
-            }
+        ${
+            new Header().getMarkup()
+        }
+        <div id="postWrap">
+        ${
+            new Post().getMarkup()
+        }
+        </div>
+        ${
+            new Comments().getMarkup()
+        }
+        ${
+            new Footer().getMarkup()
+        }
     </div>
 `
 
@@ -29,19 +31,6 @@ export class SinglePost extends Component {
 
         window.addEventListener('load', this.routeHash);
         window.addEventListener('hashchange', this.routeHash);
-
-        window.addEventListener('load', () => {
-            if (window.location.hash.substr(1).split('/')[0] === 'post') {
-                document.querySelector('.page-wrap').insertAdjacentHTML('afterbegin', new Header().getMarkup());
-            } else {
-                window.addEventListener('hashchange', () => {
-                    if (window.location.hash.substr(1).split('/')[0] === 'post') {
-                        if (document.querySelector('.header-wrap')) document.querySelector('.header-wrap').remove();
-                        document.querySelector('.page-wrap').insertAdjacentHTML('afterbegin', new Header().getMarkup());
-                    }
-                });
-            }
-        });
     }
 
     routeHash = () => {

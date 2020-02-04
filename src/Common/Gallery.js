@@ -1,7 +1,6 @@
 import { Component } from '../Core/Component.js';
 import { getDataGallery } from '../Core/GetData.js';
 import { GalleryImage } from './GalleryImage.js';
-import { PaginationItem } from './PaginationItem.js';
 import { clearElement } from '../Core/Functions.js';
 import { PaginationPanel } from './PaginationPanel.js';
 

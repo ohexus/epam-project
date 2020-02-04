@@ -33,9 +33,5 @@ const renderMarkup = (options) =>
 export class Header extends Component {
     constructor(options = {}) {
         super(options, renderMarkup(options));
-        window.addEventListener('load', () => {
-            console.log('load');
-        });
-
     }
 }

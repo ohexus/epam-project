@@ -46,7 +46,7 @@ export class Post extends Component {
         postId: '',
         imagePost: '',
         imageAvatar: '',
-        authorName: '',
+        login: '',
         datePubl: '',
         timePubl: '',
         title: '',

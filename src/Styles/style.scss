@@ -49,7 +49,8 @@ body {
 }
 
 body,
-input {
+input,
+select {
     font-family: 'Muli', sans-serif;
 }
 
@@ -536,6 +537,16 @@ input {
     align-items: center;
     width: 100%;
     height: 100%;
+    &>* {
+        width: 20%;
+        height: 50px;
+    }
+}
+
+.filter-select {
+    text-align: center;
+    width: 100%;
+    height: 50px;
 }
 
 
@@ -543,6 +554,7 @@ input {
 
 // .posts-wrap {}
 .posts {
+    position: relative;
     display: grid;
     grid-gap: 25px;
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
@@ -651,14 +663,14 @@ input {
 .post-medium {
     grid-row-end: span 2;
     .post__content-wrap {
-        height: 145px;
+        height: 135px;
     }
 }
 
 .post-big {
     grid-row-end: span 3;
     .post__content-wrap {
-        height: 370px;
+        height: 360px;
     }
 }
 
@@ -707,7 +719,7 @@ input {
 /* -----ARTICLE----- */
 
 .post__article {
-    margin: 10px auto;
+    margin: 0 auto;
 }
 
 .post__title {
@@ -774,6 +786,54 @@ input {
 
 /* ----------MORE-BTN---------- */
 
+.new-post-btn {
+    display: flex;
+    position: sticky;
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    bottom: 100px;
+    left: 75%;
+    z-index: 1000;
+    transition: 0.5s;
+    border-radius: 25px;
+    &:hover {
+        width: 200px;
+        background: #F5F5F5;
+        .new-post-btn__label {
+            opacity: 1;
+            width: 150px;
+        }
+    }
+}
+
+.new-post-btn__label {
+    @extend %flexx-center;
+    opacity: 0;
+    width: 100px;
+    height: 100%;
+    transition: 0.5s;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.new-post-btn__btn {
+    @extend %remove-marpad;
+    border: 1px solid #f5f5f5;
+    outline: 0;
+    width: 50px;
+    height: inherit;
+    border-radius: 100%;
+    cursor: pointer;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: inherit;
+    }
+}
+
 .more-btn-wrap {
     @extend %flexx-center;
     width: 100%;
@@ -785,8 +845,12 @@ input {
     outline: 0;
     border: 0;
     cursor: pointer;
-    background: rgba(53, 120, 172, 0.7);
-    border-radius: 5px;
+    background: rgba(53, 120, 172, 0.25);
+    border-radius: 2px;
+    transition: 0.3s;
+    &:hover {
+        background: rgba(53, 120, 172, 0.7);
+    }
 }
 
 

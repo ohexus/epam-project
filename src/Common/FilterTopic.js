@@ -2,8 +2,9 @@ import { Component } from '../Core/Component.js';
 
 const renderMarkup = (options) => `
     <div class="topic-filter">
-        <select name="topic" id="filterTopic">
-            <option value="all" selected>all</option>
+        <label for="filterTopic">Topic</label>
+        <select name="topic" id="filterTopic" class="filter-select">
+            <option value="all" selected ${options.disabled}>All</option>
             <option value="concert">Concerts</option>
             <option value="review">Reviews</option>
             <option value="interview">Interviews</option>
@@ -12,7 +13,9 @@ const renderMarkup = (options) => `
 `
 
 export class FilterTopic extends Component {
-    constructor(options = {}) {
+    constructor(options = {
+        disabled: ''
+    }) {
         super(options, renderMarkup(options));
     }
 }

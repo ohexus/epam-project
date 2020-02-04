@@ -7,6 +7,9 @@ const renderMarkup = (options) =>
     `
     <div class="page-wrap">
             ${
+                new Header().getMarkup()
+            }
+            ${
                 new Gallery().getMarkup()
             }
             ${
@@ -18,18 +21,5 @@ const renderMarkup = (options) =>
 export class GalleryPage extends Component {
     constructor(options = {}) {
         super(options, renderMarkup(options));
-
-        window.addEventListener('load', () => {
-            if (window.location.hash.substr(1).split('/')[0] === 'gallery') {
-                document.querySelector('.page-wrap').insertAdjacentHTML('afterbegin', new Header().getMarkup());
-            } else {
-                window.addEventListener('hashchange', () => {
-                    if (window.location.hash.substr(1).split('/')[0] === 'gallery') {
-                        if (document.querySelector('.header-wrap')) document.querySelector('.header-wrap').remove();
-                        document.querySelector('.page-wrap').insertAdjacentHTML('afterbegin', new Header().getMarkup());
-                    }
-                });
-            }
-        });
     }
 }
