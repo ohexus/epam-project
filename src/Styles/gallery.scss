@@ -42,13 +42,13 @@ $gallery-side: 930px;
 }
 
 .pagination__item {
-    width: 32px;
-    height: 32px;
-    background: #DCDCDC;
+    width: 64px;
+    height: 64px;
+    background: transparent;
     border-radius: 2px;
     overflow: hidden;
     box-sizing: border-box;
-    border: 1px solid rgb(200, 200, 200);
+    // border: 1px solid rgb(200, 200, 200);
     transition: 0.5s;
     opacity: 1;
 }

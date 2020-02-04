@@ -39,7 +39,7 @@ export class Gallery extends Component {
         let hash = window.location.hash.substr(1).split('/');
         if (hash[0] === 'gallery') {
             if (!hash[1]) {
-                window.location.hash = '#gallery/1'
+                window.location.href = '#gallery/1';
             } else {
                 return hash[1]
             }

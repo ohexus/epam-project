@@ -2,6 +2,8 @@ import { Component } from '../Core/Component.js';
 
 const renderMarkup = (options) => `
 <nav class="nav-menu-wrap">
+    <input type="checkbox" id="navMenuCheckbox" class="nav-menu__checkbox">
+    <label for="navMenuCheckbox" class="nav-menu__label"></label>
     <ul class="nav-menu">
         <li class="nav-menu__item">
             <a href="${options.home}" class="nav-menu__link"><span>Home</span></a>
@@ -30,7 +32,7 @@ export class NavMenu extends Component {
         home: '',
         genres: '#genres',
         concerts: '#concerts',
-        gallery: '#gallery',
+        gallery: '#gallery/1',
         reviews: '#reviews',
         interviews: '#interviews'
     }) {

@@ -13,6 +13,7 @@ import './Styles/style.scss';
 import './Styles/singlePost.scss';
 import './Styles/gallery.scss';
 import './Styles/newPost.scss';
+import './Styles/adaptivity.scss';
 
 const router = new Router({
         default: new MainPage(),
