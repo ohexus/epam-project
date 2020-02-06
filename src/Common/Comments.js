@@ -42,7 +42,7 @@ export class Comments extends Component {
             let dataUsers = getDataUsers();
             let dataComments = getDataComments();
             let currentPost = findCurrentPost(id, dataComments);
-
+            console.log(dataUsers);
             if (currentPost !== null) {
                 if (comments.children.length != dataComments[currentPost].comments.length) {
                     amountCommentsElem.textContent = dataComments[currentPost].comments.length;
@@ -50,7 +50,7 @@ export class Comments extends Component {
                         let currentUser = findUser(dataComments[currentPost].comments[i].userId, dataUsers);
                         comments.insertAdjacentHTML("beforeend", new Comment({
                             imageAvatar: dataUsers[currentUser].avatarUrl,
-                            name: dataUsers[currentUser].name,
+                            login: dataUsers[currentUser].login,
                             datePubl: dataComments[currentPost].comments[i].date.datePublished,
                             timePubl: dataComments[currentPost].comments[i].date.timePublished,
                             content: dataComments[currentPost].comments[i].comment

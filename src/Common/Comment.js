@@ -6,7 +6,7 @@ const renderMarkup = (options) =>
         <div class="comment__info">
             <div class="comment__author">
                 <img class="comment__author-avatar" src="${options.imageAvatar}">
-                <div class="comment__author-name">${options.name}</div>
+                <div class="comment__author-name">${options.login}</div>
             </div>
             <div class="comment__date">
                 <div class="comment__date-published">${options.datePubl}</div>
