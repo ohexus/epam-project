@@ -10,9 +10,9 @@ import { InterviewsPage } from './Pages/InterviewsPage.js';
 import { NewPostPage } from './Pages/NewPostPage.js';
 
 import './Styles/style.scss';
-import './Styles/singlePost.scss';
 import './Styles/gallery.scss';
 import './Styles/newPost.scss';
+import './Styles/singlePost.scss';
 import './Styles/adaptivity.scss';
 
 const router = new Router({

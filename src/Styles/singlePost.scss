@@ -10,8 +10,12 @@
     opacity: 1;
     box-shadow: 2px 5px 15px -7px rgba(0, 0, 0, 0.75);
     .post__link {
+        cursor: default;
         height: 400px;
         margin-bottom: 20px;
+        &:hover .post__image {
+            height: 100%;
+        }
     }
     .post__image {
         height: 100%;

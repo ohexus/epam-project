@@ -1,21 +1,29 @@
 import { Component } from '../Core/Component.js';
 
 const renderMarkup = (options) => `
-    <div class="topic-filter">
-        <label for="filterTopic">Topic</label>
-        <select name="topic" id="filterTopic" class="filter-select">
-            <option value="all" selected ${options.disabled}>All</option>
-            <option value="concert">Concerts</option>
-            <option value="review">Reviews</option>
-            <option value="interview">Interviews</option>
-        </select>
+<label for="topicSelect" class="filter__select" placeholder="Topic...">
+    <input class="filter__select-input select" type="radio" name="topic" id="topicSelect">
+    <div class="filter__triangle"></div>
+    <div class="filter__select-menu">
+        <input class="filter__select-input" type="radio" name="topic" value="all" id="topicSelect[all]">
+        <label class="filter__select-label" for="topicSelect[all]">All</label> 
+
+        <input class="filter__select-input" type="radio" name="topic" value="concert" id="topicSelect[concert]">
+        <label class="filter__select-label" for="topicSelect[concert]">Concert</label>
+
+        <input class="filter__select-input" type="radio" name="topic" value="reviews" id="topicSelect[reviews]">
+        <label class="filter__select-label" for="topicSelect[reviews]">Reviews</label>
+
+        <input class="filter__select-input" type="radio" name="topic" value="interviews" id="topicSelect[interviews]">
+        <label class="filter__select-label" for="topicSelect[interviews]">Interviews</label>
+
+        <label class="filter__select-text">Topic</label>
     </div>
+</label>
 `
 
 export class FilterTopic extends Component {
-    constructor(options = {
-        disabled: ''
-    }) {
+    constructor(options = {}) {
         super(options, renderMarkup(options));
     }
 }
