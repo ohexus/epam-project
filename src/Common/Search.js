@@ -3,11 +3,12 @@ import { Component } from '../Core/Component.js';
 const renderMarkup = (options) => `
 <form class="search">
     <input type="text" class="search__input" placeholder="Search..." value="" autofocus=""> 
-    <button type="button" class="search__btn">✘</button>
+    <input type="button" class="search__cancel">
+    <input type="submit" class="search__submit">
 </form>
 `
 
-export class FilterSort extends Component {
+export class Search extends Component {
     constructor(options = {}) {
         super(options, renderMarkup(options));
     }

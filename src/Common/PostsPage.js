@@ -33,6 +33,18 @@ export class PostsPage extends Component {
     addCheckPosts = (options) => {
         let postsElem = document.getElementById('posts');
         postsElem.insertAdjacentHTML("beforeend", addPosts(options));
+        for (let i = 0; i < postsElem.children.length; i++) {
+            postsElem.children[i].style.margin = '100% 0 0';
+            postsElem.children[i].style.transition = '0.5s';
+            postsElem.children[i].style.opacity = '0';
+            setTimeout(() => {
+                postsElem.children[i].style.margin = '0';
+                postsElem.children[i].style.opacity = '1';
+                setTimeout(() => {
+                    postsElem.children[i].style.transition = '0.15s';
+                }, 500);
+            }, 0);
+        }
         this.changeContentHeight(postsElem.children, options.dataPosts);
         this.addLinks(postsElem.children);
         moreBtn.style.display = (postsElem.children.length === options.dataPosts.length) ? 'none' : 'block';

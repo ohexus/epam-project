@@ -65,10 +65,8 @@ export class NewPostPage extends Component {
                 filterTopic.value === 'all' ||
                 filterGenre.value === 'all' ||
                 previewImage.src === '') {
-                document.querySelector('.new-post__alert').style.bottom = '15px';
                 document.querySelector('.new-post__alert').style.opacity = '1';
                 setTimeout(() => {
-                    document.querySelector('.new-post__alert').style.bottom = '-100%';
                     document.querySelector('.new-post__alert').style.opacity = '0';
                 }, 2750);
             } else {

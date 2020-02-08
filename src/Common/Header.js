@@ -1,32 +1,30 @@
 import { Component } from '../Core/Component.js';
 import { NavMenu } from '../Common/NavMenu.js';
 import { Authorization } from './Authorization.js';
+import { Search } from './Search.js';
 
-const renderMarkup = (options) =>
-    `
+const renderMarkup = (options) => `
 <div class="header-wrap">
-<header class="header" id="header">
-    <div class="header-row">
+    <header class="header" id="header">
+        <div class="header-row">
+            <div class="search-wrap">
+                ${
+                    new Search().getMarkup()
+                }
+            </div>
+            <div class="logo-wrap">
+                <a class="logo" href="">
+                    <i class="logo__image"></i>
+                </a>
+            </div>
+            ${
+                new Authorization().getMarkup()
+            }
+        </div>
         ${
-            new Authorization().getMarkup()
+            new NavMenu().getMarkup()
         }
-        <div class="logo-wrap">
-            <a class="logo" href="index.html">
-                <i class="logo__image"></i>
-            </a>
-        </div>
-
-        <div class="search-wrap">
-            <form class="search">
-                <input type="search" class="search__input" placeholder="Search here...">
-                <button type="button" class="search__btn"></button>
-            </form>
-        </div>
-    </div>
-    ${
-        new NavMenu().getMarkup()
-    }
-</header>
+    </header>
 </div>
 `
 

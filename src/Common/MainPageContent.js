@@ -7,13 +7,13 @@ const renderMarkup = (options) => `
 <div class="main-wrap">
     <div class="filters-wrap">
        ${
-           options.FilterPanel.getMarkup()
+        new FiltersPanel(options).getMarkup()
         }
     </div>
 
     <div class="posts-wrap">
         ${
-            options.PostPage.getMarkup()
+            new PostsPage(options).getMarkup()
         }
     </div>
 
@@ -27,10 +27,6 @@ const renderMarkup = (options) => `
 
 export class MainPageContent extends Component {
     constructor(options = {}) {
-        let FilterPanel = new FiltersPanel(options);
-        options.FilterPanel = FilterPanel;
-        let PostPage = new PostsPage(options);
-        options.PostPage = PostPage;
         super(options, renderMarkup(options));
     }
 }

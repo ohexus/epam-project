@@ -34,10 +34,10 @@
     }
     .post__author-name,
     .post__stats {
-        font-size: 22px;
+        font-size: 1.4rem;
     }
     .post__date {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     .post__description::after {
         display: none;
@@ -47,7 +47,7 @@
     }
     .post__title {
         margin: 0 auto 30px;
-        font-size: 50px;
+        font-size: 3.5rem;
         text-align: center;
     }
     .post__content-wrap {
@@ -55,12 +55,12 @@
     }
     .post__content {
         height: max-content;
-        font-size: 26px;
+        font-size: 1.6rem;
     }
     .post__footer {
         position: static;
         width: 100%;
-        height: 50px;
+        height: 3.5rem;
     }
     .post__stats {
         height: inherit;
@@ -87,7 +87,7 @@
 
 .comments__amount {
     margin: 30px 5% 50px;
-    font-size: 30px;
+    font-size: 1.8rem;
 }
 
 .comments__comment {
@@ -108,7 +108,7 @@
 .comment__author,
 .comment__date {
     @extend %flexx-center;
-    font-size: 22px;
+    font-size: 1.2rem;
 }
 
 .comment__author-avatar {
@@ -127,11 +127,11 @@
     // left: 25%;
     // transform: translateY(-50%);
     margin: 0 0 0 20px;
-    font-size: 18px;
+    font-size: 1.1rem;
 }
 
 .comment__content {
     padding: 20px 63px 30px;
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: justify;
 }

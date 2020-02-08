@@ -1,7 +1,7 @@
 import { Component } from '../Core/Component.js';
 
 const renderMarkup = (options) => `
-    <div class="post post-${options.size}">
+<div class="post post-${options.size}">
     <a class="post__link" data-id="${options.postId}">
         <img class="post__image" src="${options.imagePost}"></img>
     </a>

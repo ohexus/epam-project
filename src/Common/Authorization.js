@@ -101,7 +101,7 @@ export class Authorization extends Component {
         };
         if (document.querySelector('.auth')) {
             document.querySelector('.auth').remove();
-            document.querySelector('.header-row').insertAdjacentHTML('afterbegin', new UserPanel(this.options).getMarkup());
+            document.querySelector('.header-row').insertAdjacentHTML('beforeend', new UserPanel(this.options).getMarkup());
         }
     }
 

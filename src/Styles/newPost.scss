@@ -12,7 +12,7 @@
     padding: 0 5%;
     margin: 20px auto;
     box-sizing: border-box;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .new-post__alert {
@@ -20,12 +20,13 @@
     position: absolute;
     width: 300px;
     height: 100px;
-    bottom: -100%;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
     background: #DC143C;
     text-align: center;
+    font-weight: 700;
     border-radius: 2px;
     transition: 0.75s;
 }
@@ -37,12 +38,12 @@
 
 .new-post__header {
     margin: 10px 0;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .new-post__label {
     margin: 20px 0;
-    font-size: 26px;
+    font-size: 1.75rem;
 }
 
 .new-post__title-input,
@@ -54,7 +55,7 @@
     margin: 0 auto 30px;
     padding: 10px 15px;
     box-sizing: border-box;
-    font-size: 22px;
+    font-size: 1.4rem;
     background: #f5f5f5;
     border-radius: 2px;
 }
@@ -106,7 +107,7 @@
     margin: 20px 0;
     width: 200px;
     height: 50px;
-    font-size: 22px;
+    font-size: 1.4rem;
     background: rgba(53, 120, 172, 0.7);
     border-radius: 2px;
     transition: 0.3s;
