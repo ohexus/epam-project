@@ -1,6 +1,6 @@
-import { Component } from '../Core/Component.js';
+import { Component } from '../../Core/Component.js';
 import { ButtonMore } from './ButtonMore.js'
-import { FiltersPanel } from './FiltersPanel.js';
+import { FiltersPanel } from '../Filter/FiltersPanel.js';
 import { PostsPage } from './PostsPage.js';
 
 const renderMarkup = (options) => `

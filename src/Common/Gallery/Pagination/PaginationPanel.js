@@ -1,5 +1,5 @@
-import { Component } from '../Core/Component.js';
-import { clearElement } from '../Core/Functions.js';
+import { Component } from '../../../Core/Component.js';
+import { clearElement } from '../../../Core/Functions.js';
 import { PaginationItem } from './PaginationItem.js';
 
 const renderMarkup = (options) => `

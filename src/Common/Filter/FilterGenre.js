@@ -1,4 +1,4 @@
-import { Component } from '../Core/Component.js';
+import { Component } from '../../Core/Component.js';
 
 const renderMarkup = (options) => `
 <label for="genreSelect" class="filter__select" placeholder="Genre...">

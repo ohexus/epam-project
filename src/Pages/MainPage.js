@@ -1,9 +1,9 @@
 import { Component } from '../Core/Component.js';
-import { Header } from '../Common/Header.js';
-import { Footer } from '../Common/Footer.js';
-import { MainPageContent } from '../Common/MainPageContent.js';
+import { Header } from '../Common/Header/Header.js';
+import { Footer } from '../Common/Footer/Footer.js';
+import { MainPageContent } from '../Common/Posts/MainPageContent.js';
 import { getDataPosts, getDataUsers } from '../Core/GetData.js';
-import { Slider } from '../Common/Slider.js';
+import { Slider } from '../Common/Slider/Slider.js';
 
 
 const renderMarkup = (options) => `
@@ -15,7 +15,7 @@ const renderMarkup = (options) => `
                 new Slider().getMarkup()
             }
             ${
-                options.MainPageCont.getMarkup()
+                new MainPageContent(options).getMarkup()
             }
             ${
                 new Footer().getMarkup()
@@ -24,12 +24,7 @@ const renderMarkup = (options) => `
 `
 
 export class MainPage extends Component {
-
-
-
     constructor(options = {}) {
-        const MainPageCont = new MainPageContent(options);
-        options.MainPageCont = MainPageCont;
         options.dataPosts = getDataPosts();
         super(options, renderMarkup(options));
     }

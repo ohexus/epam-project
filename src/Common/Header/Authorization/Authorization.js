@@ -1,8 +1,8 @@
-import { Component } from '../Core/Component.js';
+import { Component } from '../../../Core/Component.js';
 import { AuthorizationForm } from './AuthorizationForm.js';
-import { findUser, clearElement, findUserByLogin } from '../Core/Functions.js';
-import { getDataUsers } from '../Core/GetData.js';
-import { UserPanel } from './UserPanel.js';
+import { findUser, clearElement, findUserByLogin } from '../../../Core/Functions.js';
+import { getDataUsers } from '../../../Core/GetData.js';
+import { UserPanel } from '../UserPanel.js';
 
 const renderMarkup = (options) => `
         <div class="auth">

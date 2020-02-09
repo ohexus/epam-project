@@ -1,6 +1,6 @@
-import { Component } from '../Core/Component.js';
-import { NavMenu } from '../Common/NavMenu.js';
-import { Authorization } from './Authorization.js';
+import { Component } from '../../Core/Component.js';
+import { NavMenu } from './NavMenu.js';
+import { Authorization } from './Authorization/Authorization.js';
 import { Search } from './Search.js';
 
 const renderMarkup = (options) => `

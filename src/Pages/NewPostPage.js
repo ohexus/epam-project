@@ -1,9 +1,9 @@
 import { Component } from '../Core/Component.js';
-import { Header } from '../Common/Header.js';
-import { Footer } from '../Common/Footer.js';
-import { NewPost } from '../Common/NewPost.js';
+import { Header } from '../Common/Header/Header.js';
+import { Footer } from '../Common/Footer/Footer.js';
+import { NewPost } from '../Common/Posts/NewPost.js';
 import { findUserByLogin } from '../Core/Functions.js';
-import { getDataUsers, getDataPosts } from '../Core/GetData.js';
+import { getDataUsers } from '../Core/GetData.js';
 
 const renderMarkup = (options) => `
 <div class="page-wrap">
@@ -25,6 +25,7 @@ export class NewPostPage extends Component {
         window.addEventListener('load', () => {
             window.addEventListener('hashchange', () => {
                 if (window.location.hash.substr(1) === 'newpost') {
+                    searchLogic();
                     let activeUser = localStorage.getItem('activeUser');
                     let dataUsers = getDataUsers();
                     let currentUser = findUserByLogin(activeUser, dataUsers);

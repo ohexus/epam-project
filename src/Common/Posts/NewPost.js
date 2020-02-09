@@ -1,6 +1,6 @@
-import { Component } from '../Core/Component.js';
-import { FilterTopic } from './FilterTopic.js';
-import { FilterGenre } from './FilterGenre.js';
+import { Component } from '../../Core/Component.js';
+import { FilterTopic } from '../Filter/FilterTopic.js';
+import { FilterGenre } from '../Filter/FilterGenre.js';
 
 const renderMarkup = (options) => `
 <div class="new-post post-single">

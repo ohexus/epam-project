@@ -1,8 +1,8 @@
-import { Component } from '../Core/Component.js';
-import { getDataGallery } from '../Core/GetData.js';
+import { Component } from '../../Core/Component.js';
+import { getDataGallery } from '../../Core/GetData.js';
 import { GalleryImage } from './GalleryImage.js';
-import { clearElement } from '../Core/Functions.js';
-import { PaginationPanel } from './PaginationPanel.js';
+import { clearElement } from '../../Core/Functions.js';
+import { PaginationPanel } from './Pagination/PaginationPanel.js';
 
 const renderMarkup = (options) => `
     <div class="gallery"></div>

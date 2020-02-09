@@ -1,5 +1,5 @@
-import { Component } from '../Core/Component.js';
-import { AuthorizationForm } from './AuthorizationForm.js';
+import { Component } from '../../Core/Component.js';
+import { AuthorizationForm } from './Authorization/AuthorizationForm.js';
 
 const renderMarkup = (options) => `
         <div class="user-panel">

@@ -1,4 +1,4 @@
-import { Post } from '../Common/Post.js'
+import { Post } from '../Common/Posts/Post.js'
 import { getDataPosts, getDataUsers } from './GetData.js';
 import { findUser, findArticleSize } from './Functions.js';
 

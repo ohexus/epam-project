@@ -1,6 +1,6 @@
-import { Component } from '../Core/Component.js';
-import { addPosts } from '../Core/AddPosts.js';
-import { findStrEnd, clearElement } from '../Core/Functions.js';
+import { Component } from '../../Core/Component.js';
+import { addPosts } from '../../Core/AddPosts.js';
+import { findStrEnd, clearElement } from '../../Core/Functions.js';
 
 const renderMarkup = (options) => `
 <div class="posts" id="posts"></div>
@@ -46,7 +46,6 @@ export class PostsPage extends Component {
             }, 0);
         }
         this.changeContentHeight(postsElem.children, options.dataPosts);
-        this.addLinks(postsElem.children);
         moreBtn.style.display = (postsElem.children.length === options.dataPosts.length) ? 'none' : 'block';
     }
 
@@ -55,7 +54,6 @@ export class PostsPage extends Component {
 
         postsElem.insertAdjacentHTML("beforeend", addPosts(options));
         this.changeContentHeight(postsElem.children, options.dataPosts);
-        this.addLinks(postsElem.children);
         options.postsElem = postsElem;
 
         document.querySelector('.new-post-btn').addEventListener('click', () => {
@@ -83,15 +81,6 @@ export class PostsPage extends Component {
         window.addEventListener('resize', () => {
             this.changeContentHeight(postsElem.children, options.dataPosts);
         });
-    }
-
-    addLinks = (posts) => {
-        for (let i = 0; i < posts.length; i++) {
-            let postId = posts[i].querySelector('.post__link').dataset.id;
-            posts[i].querySelector('.post__link').addEventListener('click', () => {
-                window.location.hash = `#post/${postId}`;
-            });
-        }
     }
 
     changeContentHeight = (posts, articles) => {

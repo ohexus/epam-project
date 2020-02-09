@@ -1,8 +1,8 @@
 import { Component } from '../Core/Component.js';
-import { Header } from '../Common/Header.js';
-import { Footer } from '../Common/Footer.js';
-import { Post } from '../Common/Post.js';
-import { Comments } from '../Common/Comments.js';
+import { Header } from '../Common/Header/Header.js';
+import { Footer } from '../Common/Footer/Footer.js';
+import { Post } from '../Common/Posts/Post.js';
+import { Comments } from '../Common/Comments/Comments.js';
 import { getDataPosts, getDataUsers } from '../Core/GetData.js';
 import { findUser } from '../Core/Functions.js';
 

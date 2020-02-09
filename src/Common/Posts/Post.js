@@ -1,8 +1,8 @@
-import { Component } from '../Core/Component.js';
+import { Component } from '../../Core/Component.js';
 
 const renderMarkup = (options) => `
 <div class="post post-${options.size}">
-    <a class="post__link" data-id="${options.postId}">
+    <a class="post__link" href="#post/${options.postId}">
         <img class="post__image" src="${options.imagePost}"></img>
     </a>
     <div class="post__description">

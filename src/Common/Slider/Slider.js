@@ -1,5 +1,5 @@
-import { Component } from '../Core/Component.js';
-import { getDataSlider } from '../Core/GetData.js';
+import { Component } from '../../Core/Component.js';
+import { getDataSlider } from '../../Core/GetData.js';
 import { SliderPanelDot } from './SliderPanelDot.js';
 import { SliderItem } from './SliderItem.js';
 

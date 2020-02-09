@@ -1,9 +1,9 @@
-import { Component } from '../Core/Component.js';
+import { Component } from '../../Core/Component.js';
 import { FilterSort } from './FilterSort.js';
 import { FilterGenre } from './FilterGenre.js';
 import { FilterTopic } from './FilterTopic.js';
-import { getDataPosts } from '../Core/GetData.js';
-import { clearElement } from '../Core/Functions.js';
+import { getDataPosts } from '../../Core/GetData.js';
+import { clearElement } from '../../Core/Functions.js';
 
 const renderMarkup = (options) => `
 <form class="filters" id="filtersForm">

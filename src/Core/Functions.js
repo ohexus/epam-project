@@ -1,6 +1,6 @@
-function findUser(id, dataU) {
-    for (let i = 0; i < dataU.length; i++) {
-        if (dataU[i].userId === id) {
+function findUser(id, data) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].userId === id) {
             return i;
         }
     }
