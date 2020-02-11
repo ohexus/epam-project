@@ -5,9 +5,7 @@ import { findStrEnd, clearElement } from '../../Core/Functions.js';
 const renderMarkup = (options) => `
 <div class="posts" id="posts"></div>
 <div class="new-post-btn">
-    <button type"button" class="new-post-btn__btn" id="addNewPost">
-        <img class="new-post-btn__icon" src="./src/Images/new-post-plus.svg">
-    </button>
+    <button type"button" class="new-post-btn__btn" id="addNewPost"></button>
     <label for="addNewPost" class="new-post-btn__label">Add new post</label>
 </div>
 `
@@ -16,7 +14,6 @@ export class PostsPage extends Component {
     constructor(options = {}) {
         super(options, renderMarkup(options));
         options.countListeners = 0;
-        console.log(localStorage);
         if (window.location.hash.substr(1).split('/')[0] === '') {
             window.addEventListener('load', () => this.posts(options));
         } else {

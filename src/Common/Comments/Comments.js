@@ -3,16 +3,15 @@ import { getDataComments, getDataUsers } from '../../Core/GetData.js';
 import { findCurrentPost, findUser } from '../../Core/Functions.js';
 import { Comment } from './Comment.js';
 
-const renderMarkup = (options) =>
-    `<div class="comments-wrap">
-                <div class="comments__amount">
-                    <span class="comments__amount-number">0</span>
-                    <span>Comments</span>
-                </div>
-                <div class="comments">
-                
-                </div>
-            </div>`
+const renderMarkup = (options) => `
+<div class="comments-wrap">
+    <div class="comments__amount">
+        <span class="comments__amount-number">0</span>
+        <span>Comments</span>
+    </div>
+    <div class="comments"></div>
+</div>
+`
 
 export class Comments extends Component {
     constructor(options = {}) {
@@ -42,14 +41,13 @@ export class Comments extends Component {
             let dataUsers = getDataUsers();
             let dataComments = getDataComments();
             let currentPost = findCurrentPost(id, dataComments);
-            console.log(dataUsers);
             if (currentPost !== null) {
                 if (comments.children.length != dataComments[currentPost].comments.length) {
                     amountCommentsElem.textContent = dataComments[currentPost].comments.length;
                     for (let i = 0; i < dataComments[currentPost].comments.length; i++) {
                         let currentUser = findUser(dataComments[currentPost].comments[i].userId, dataUsers);
                         comments.insertAdjacentHTML("beforeend", new Comment({
-                            imageAvatar: dataUsers[currentUser].avatarUrl,
+                            imageAvatar: (dataUsers[currentUser].avatarUrl === 'default') ? require('../../Images/user-icon.svg') : dataUsers[currentUser].avatarUrl,
                             login: dataUsers[currentUser].login,
                             datePubl: dataComments[currentPost].comments[i].date.datePublished,
                             timePubl: dataComments[currentPost].comments[i].date.timePublished,

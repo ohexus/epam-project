@@ -10,8 +10,8 @@ let postsFilled = 0;
 let currentPost = 0;
 
 function addPosts(options) {
-    options.dataPosts = options.dataPosts ? options.dataPosts : getDataPosts();
-    options.dataUsers = options.dataUsers ? options.dataUsers : getDataUsers();
+    options.dataPosts = options.dataPosts ? options.dataPosts : dataPosts;
+    options.dataUsers = options.dataUsers ? options.dataUsers : dataUsers;
     if (!options.postsFilled) options.postsFilled = postsFilled;
     if (!options.currentPost) options.currentPost = currentPost;
 
@@ -27,7 +27,7 @@ function addPosts(options) {
             size: postSize,
             postId: options.dataPosts[currentPost].postId,
             imagePost: options.dataPosts[currentPost].imageUrl,
-            imageAvatar: options.dataUsers[currentUser].avatarUrl,
+            imageAvatar: (options.dataUsers[currentUser].avatarUrl === 'default') ? require('../Images/user-icon.svg') : options.dataUsers[currentUser].avatarUrl,
             login: options.dataUsers[currentUser].login,
             datePubl: options.dataPosts[currentPost].date.datePublished,
             timePubl: options.dataPosts[currentPost].date.timePublished,

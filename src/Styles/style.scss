@@ -62,6 +62,10 @@ select {
     font-size: 1.2rem;
 }
 
+.page-wrap {
+    overflow: hidden;
+}
+
 
 /* ---------------HEADER--------------- */
 
@@ -97,16 +101,21 @@ select {
 
 .auth__label {
     @extend %flexx-center;
-    width: 80px;
+    min-width: 100px;
     height: 40px;
+    padding: 0 5px;
+    box-sizing: border-box;
     cursor: pointer;
-    transition: 0.75s;
+    transition: 0.3s;
     background: rgba(163, 208, 195, 0.7);
     &:first-of-type {
         border-radius: 7px 0 0 7px;
     }
     &:last-of-type {
         border-radius: 0 7px 7px 0;
+    }
+    &:hover {
+        background: #eee;
     }
 }
 
@@ -125,7 +134,7 @@ select {
     background: #bbbbbb;
     border-radius: 2px;
     opacity: 0;
-    transition: 1s;
+    transition: 0.3s;
     z-index: 100;
     &>input {
         outline: 0;
@@ -231,16 +240,33 @@ select {
 
 .user-panel {
     @extend %flexx-center;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .user-panel__avatar {
-    height: 75%;
+    width: 50px;
+    height: 50px;
 }
 
 .user-panel__name {
-    margin-right: 15px;
     font-size: 2rem;
+    margin: 0 15px;
+}
+
+.user-panel__sign-out {
+    width: max-content;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: rgba(163, 208, 195, 0.7);
+    transition: 0.3s;
+    &:hover {
+        background: #eeeeee;
+    }
 }
 
 
@@ -277,12 +303,55 @@ select {
     z-index: 1000;
 }
 
+.search__form {
+    position: relative;
+    width: 100%;
+    background: #A3D0C3;
+    border-radius: 10px;
+}
+
+.search__input {
+    width: 100%;
+    height: 40px;
+    padding: 0 0 0 45px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.search__cancel,
+.search__submit {
+    @extend %flexx-center,
+    %remove-marpad;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    filter: invert(1);
+    color: transparent;
+}
+
+.search__cancel {
+    background: no-repeat center/50% url(../Images/search-cancel.svg);
+    left: 0;
+}
+
+.search__submit {
+    background: no-repeat center/50% url(../Images/search.svg);
+    right: 0;
+}
+
 .search__results-wrap {
     display: flex;
     position: absolute;
     top: 100%;
     left: 0;
     width: 200%;
+    height: 0;
     max-height: 200px;
     margin: 20px 0 0;
     border-radius: 5px;
@@ -299,6 +368,7 @@ select {
     height: 50px;
     background: #A3D0C3;
     border-radius: 5px;
+    z-index: 10;
 }
 
 .search__results {
@@ -339,72 +409,81 @@ select {
     background: #f5f5f5;
     border-radius: 5px;
     overflow: hidden;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+        background: #eeeeee;
+    }
 }
 
 .search__result-link {
+    position: relative;
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
+    &:hover {
+        & .search__result-info {
+            opacity: 0;
+            width: 0;
+            transition-delay: 0.75s;
+        }
+        & .search__result-context {
+            opacity: 1;
+            transition-delay: 0.75s;
+            animation: textScrolling 10s 0.75s linear forwards;
+        }
+    }
 }
 
-.search__result-img {
+@keyframes textScrolling {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -500px;
+    }
+}
+
+.search__result-image,
+.search__result-avatar {
     width: 40px;
+    min-width: 40px;
     height: 40px;
     object-fit: cover;
     object-position: center;
+    z-index: 1;
+}
+
+.search__result-avatar {
+    padding: 2.5px;
+    box-sizing: border-box;
+    background: #f5f5f5;
+}
+
+.search__result-info,
+.search__result-context {
+    max-height: 100%;
+    margin-left: 5px;
+    white-space: nowrap;
+    transition: 0.15s;
+}
+
+.search__result-info {
+    opacity: 1;
+    width: 100%;
 }
 
 .search__result-context {
-    margin-left: 5px;
-}
-
-.search__form {
-    position: relative;
-    width: 100%;
-    background: #A3D0C3;
-    border-radius: 10px;
-}
-
-.search__input {
-    width: 100%;
-    height: 40px;
-    padding: 0 0 0 15px;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    background: transparent;
-}
-
-.search__cancel {
-    @extend %flexx-center,
-    %remove-marpad;
     position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 0;
-    right: 40px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: no-repeat center/50% url(../Images/search-cancel.svg);
-    filter: invert(1);
-}
-
-.search__submit {
-    @extend %flexx-center,
-    %remove-marpad;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 0;
-    right: 0;
-    color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: no-repeat center/75% url(../Images/search.svg);
-    filter: invert(1);
+    top: 50%;
+    left: 40px;
+    transform: translate(0, -50%);
+    max-width: 500px;
+    width: max-content;
+    opacity: 0;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
 }
 
 
@@ -419,12 +498,6 @@ select {
     display: none;
 }
 
-.nav-menu__label {
-    width: 50px;
-    height: 50px;
-    background: center/cover url(../Images/hamburger-menu.svg);
-}
-
 .nav-menu {
     display: flex;
     justify-content: flex-start;
@@ -437,7 +510,7 @@ select {
     width: 100px;
     height: 50px;
     border-right: 1px solid black;
-    transition: 0.3s;
+    transition: 0.2s;
     &:last-child {
         border: none;
     }
@@ -463,7 +536,7 @@ select {
             opacity: 0;
             transform: translate(-90%, -50%);
             background: #3578ac;
-            transition: 0.3s ease-in-out;
+            transition: 0.2s ease-in-out;
         }
         &::after {
             left: 250%;
@@ -516,7 +589,7 @@ select {
     height: 380px;
     padding: 0 0 0 50px;
     background: rgba(18, 127, 211, 0.9);
-    background: linear-gradient(135deg, rgba(18, 127, 211, 0.2) 0%, rgba(18, 127, 211, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(18, 127, 211, 0.5) 0%, rgba(18, 127, 211, 0.8) 100%);
     border-radius: 3px 0 0 0;
     transition: 0.75s ease-in-out;
 }
@@ -586,7 +659,7 @@ select {
     border-radius: 100%;
     background: transparent;
     cursor: pointer;
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-in-out;
     background: #8d8d8d;
     z-index: 100;
     &:hover {
@@ -667,7 +740,7 @@ select {
     background: #f5f5f5b3;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.1s;
+    transition: 0.2s;
     &:hover {
         background: #f5f5f5;
     }
@@ -680,11 +753,13 @@ select {
     display: none;
 }
 
+$filter-height: 50px;
 .filter__select {
     position: relative;
     display: block;
     width: 120px;
-    height: 50px;
+    height: $filter-height;
+    min-height: $filter-height;
     z-index: 100;
     &::before {
         content: attr(placeholder);
@@ -693,7 +768,7 @@ select {
         left: 0;
         width: 100%;
         height: 100%;
-        padding-left: 5px;
+        padding: 2px 10px;
         box-sizing: border-box;
         color: black;
         background: rgba(141, 141, 141, 0.7);
@@ -701,8 +776,13 @@ select {
         z-index: -1;
         transition: 0.5s 0.2s;
     }
-    &:hover::before {
-        top: -50%;
+    &:hover {
+        &::before {
+            top: -50%;
+        }
+        & .filter__select-text {
+            background: #eee;
+        }
     }
 }
 
@@ -710,8 +790,8 @@ select {
     position: absolute;
     display: block;
     width: 100%;
-    min-height: 50px;
-    top: 50px;
+    min-height: $filter-height;
+    top: $filter-height;
     left: 0;
     border-radius: 0 0 5px 5px;
     cursor: pointer;
@@ -725,6 +805,10 @@ select {
     padding: 10px;
     border-radius: 5px;
     box-sizing: border-box;
+    &:hover {
+        background: #eee;
+        cursor: pointer;
+    }
 }
 
 .filter__select-label {
@@ -734,10 +818,6 @@ select {
     opacity: 0;
     background: #f5f5f5;
     transition: 0.2s;
-    &:hover {
-        background: #eee;
-        cursor: pointer;
-    }
     &:last-child {
         border-radius: 0 0 5px 5px;
     }
@@ -746,7 +826,7 @@ select {
 .filter__select-text {
     position: absolute;
     width: 100%;
-    height: 50px;
+    height: $filter-height;
     top: 0;
     left: 0;
     opacity: 1;
@@ -780,13 +860,13 @@ select {
             top: -25px;
         }
         & .filter__select-label {
-            height: 50px;
+            height: $filter-height;
             opacity: 1;
             display: flex;
             border-top: 1px solid #eee;
         }
         & .filter__select-text {
-            top: -50px;
+            top: -$filter-height;
             border-radius: 5px 5px 0 0;
         }
     }
@@ -798,7 +878,7 @@ select {
         display: flex;
         top: 0;
         left: 0;
-        height: 50px;
+        height: $filter-height;
         z-index: -1;
         opacity: 1;
     }
@@ -819,6 +899,7 @@ select {
     width: 90%;
     margin: 0 auto;
     padding: 50px 0 30px;
+    overflow: hidden;
 }
 
 .post {
@@ -843,7 +924,7 @@ select {
     height: inherit;
     object-fit: cover;
     object-position: center;
-    transition: 0.6s ease-out 0.15s;
+    transition: 0.4s ease-out 0.15s;
     z-index: 10;
 }
 
@@ -868,7 +949,7 @@ select {
         height: 100%;
         background: rgb(199, 205, 211);
         opacity: 0;
-        transition: 0.75s;
+        transition: 0.55s;
     }
 }
 
@@ -956,6 +1037,8 @@ select {
     width: 48px;
     height: 48px;
     border-radius: 100%;
+    border: 0;
+    outline: 0;
     object-fit: cover;
     object-position: center;
 }
@@ -1013,7 +1096,7 @@ select {
     left: 0;
     background-color: inherit;
     z-index: 10;
-    transition: 0.65s 0.1s;
+    transition: 0.45s 0.1s;
 }
 
 .post__hr {
@@ -1023,7 +1106,7 @@ select {
     color: #bbbbbb;
     background: #bbbbbb;
     border: 0;
-    transition: 0.5s 0.25s;
+    transition: 0.3s 0.25s;
 }
 
 .post__stats {
@@ -1045,7 +1128,7 @@ select {
 /* ----------MORE-BTN---------- */
 
 .new-post-btn {
-    display: flex;
+    display: none;
     position: sticky;
     margin-top: 20px;
     width: 150px;
@@ -1053,7 +1136,7 @@ select {
     bottom: 100px;
     left: 75%;
     z-index: 1000;
-    transition: 0.5s;
+    transition: 0.3s;
     border-radius: 25px;
     &:hover {
         width: 200px;
@@ -1070,25 +1153,31 @@ select {
     opacity: 0;
     width: 100px;
     height: 100%;
-    transition: 0.5s;
+    transition: 0.3s;
     box-sizing: border-box;
     cursor: pointer;
 }
 
 .new-post-btn__btn {
     @extend %remove-marpad;
+    position: relative;
     border: 1px solid #f5f5f5;
     outline: 0;
+    overflow: hidden;
     width: 50px;
     height: inherit;
     border-radius: 100%;
     cursor: pointer;
-    img {
+    background: center/cover url(../Images/new-post-plus.svg);
+    &::before {
+        content: '';
+        position: absolute;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        object-position: center;
-        z-index: inherit;
+        top: 0;
+        left: 0;
+        background: #F5F5F5;
+        z-index: -1;
     }
 }
 
@@ -1148,8 +1237,8 @@ select {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 15px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
     width: 75%;
     margin-bottom: 20px;
 }
@@ -1178,7 +1267,7 @@ select {
 /* footer icons */
 
 .signature__socs-wrap {
-    width: 40%;
+    width: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1187,6 +1276,7 @@ select {
 .signature__socs {
     width: 48px;
     height: 48px;
+    margin: 0 5px;
     border-radius: 50%;
     transition: 0.2s;
     &:hover {

@@ -5,7 +5,7 @@ const renderMarkup = (options) => `
     <footer class="footer">
         <div class="brand">
             <div class="logo">
-                <div class="logo__image"></div>
+                <i class="logo__image"></i>
                 <span class="logo__name">MUSIC BLOG</span>
             </div>
             <h3 class="slogan">Music is life.</h3>
@@ -28,11 +28,11 @@ const renderMarkup = (options) => `
             <div class="footer-menu__item">
                 <h4 class="footer-menu__item-header"><a class="footer-menu__link" href="./reviews.html">Reviews</a></h4>
                 <ul>
-                    <li><a class="footer-menu__link" href="#">Nicolas Jaar</a></li>
-                    <li><a class="footer-menu__link" href="#">Nicolas Jaar</a></li>
-                    <li><a class="footer-menu__link" href="#">Nicolas Jaar</a></li>
-                    <li><a class="footer-menu__link" href="#">Nicolas Jaar</a></li>
-                    <li><a class="footer-menu__link" href="#">Nicolas Jaar</a></li>
+                    <li><a class="footer-menu__link" href="#">The Blaze</a></li>
+                    <li><a class="footer-menu__link" href="#">Forest Swords</a></li>
+                    <li><a class="footer-menu__link" href="#">The Prodigy</a></li>
+                    <li><a class="footer-menu__link" href="#">Binkbeats</a></li>
+                    <li><a class="footer-menu__link" href="#">DJ Shadow</a></li>
                 </ul>
             </div>
             
@@ -58,11 +58,11 @@ const renderMarkup = (options) => `
             <div class="footer-menu__item">
                 <h4 class="footer-menu__item-header"><a class="footer-menu__link" href="./concerts.html">Concerts</a></h4>
                 <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
+                    <li><a class="footer-menu__link" href="#">Shortparis</a></li>
+                    <li><a class="footer-menu__link" href="#">Дельфин</a></li>
+                    <li><a class="footer-menu__link" href="#">Yuko</a></li>
+                    <li><a class="footer-menu__link" href="#">Led Zeppelin</a></li>
+                    <li><a class="footer-menu__link" href="#">Subcarpaţi</a></li>
                 </ul>
             </div>
 

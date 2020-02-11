@@ -3,7 +3,8 @@ import { Component } from '../../Core/Component.js';
 const renderMarkup = (options) => `
 <nav class="nav-menu-wrap">
     <input type="checkbox" id="navMenuCheckbox" class="nav-menu__checkbox">
-    <label for="navMenuCheckbox" class="nav-menu__label"></label>
+    <label for="navMenuCheckbox" class="nav-menu__label-hamburger"></label>
+    <label for="navMenuCheckbox" class="nav-menu__label-logo"></label>
     <ul class="nav-menu">
         <li class="nav-menu__item">
             <a href="${options.home}" class="nav-menu__link"><span>Home</span></a>

@@ -3,7 +3,7 @@ import { FilterTopic } from '../Filter/FilterTopic.js';
 import { FilterGenre } from '../Filter/FilterGenre.js';
 
 const renderMarkup = (options) => `
-<div class="new-post post-single">
+<div class="new-post">
     <h3 class="new-post__header">New Post</h3>
     <label class="new-post__label" for="new-post__title">Title</label>
     <input type="text" class="new-post__title-input" name="new-post__title" id="newPostTitle" maxlength="40">

@@ -22,6 +22,18 @@ function getDataPosts() {
 }
 
 function getDataUsers() {
+    if (localStorage.getItem('user')) {
+        let user = JSON.parse(localStorage.getItem('user'));
+
+        let status = true;
+        for (let j = 0; j < dataUsers.length; j++) {
+            if (dataUsers[j].userId === user.userId) {
+                status = false;
+            }
+        }
+        if (status) dataUsers.push(user);
+    }
+
     return dataUsers;
 }
 

@@ -76,7 +76,7 @@ export class Gallery extends Component {
         const imagesAmount = data.length;
         const pageIdFirst = 0;
         const pageIdLast = Math.ceil(imagesAmount / imagesPerPage) - 1;
-        console.log(`id: ${pageId}|prev: ${pageIdPrev}|first: ${pageIdFirst}|last: ${pageIdLast}`);
+        // console.log(`id: ${pageId}|prev: ${pageIdPrev}|first: ${pageIdFirst}|last: ${pageIdLast}`);
 
         const sidePages = 1;
         const paginationElem = document.querySelector('.pagination');

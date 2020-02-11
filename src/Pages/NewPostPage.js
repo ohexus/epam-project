@@ -25,7 +25,6 @@ export class NewPostPage extends Component {
         window.addEventListener('load', () => {
             window.addEventListener('hashchange', () => {
                 if (window.location.hash.substr(1) === 'newpost') {
-                    searchLogic();
                     let activeUser = localStorage.getItem('activeUser');
                     let dataUsers = getDataUsers();
                     let currentUser = findUserByLogin(activeUser, dataUsers);
@@ -44,8 +43,6 @@ export class NewPostPage extends Component {
     addListeners = (userId) => {
         const newPostTitle = document.querySelector('#newPostTitle');
         const newPostContent = document.querySelector('#newPostContent');
-        const filterTopic = document.querySelector('#filterTopic');
-        const filterGenre = document.querySelector('#filterGenre');
         const imageUploadBtn = document.querySelector('#imageUploadBtn');
         const previewImage = document.querySelector('#previewImage');
         const submitBtn = document.querySelector('#newPostSubmit');
@@ -59,10 +56,12 @@ export class NewPostPage extends Component {
         });
 
         submitBtn.addEventListener('click', (e) => {
-            console.log('click');
             e.preventDefault();
-
+            const filterTopic = document.querySelector('[name=topic]:checked');
+            const filterGenre = document.querySelector('[name=genre]:checked');
             if (newPostTitle.value === '' ||
+                filterTopic === null ||
+                filterGenre === null ||
                 filterTopic.value === 'all' ||
                 filterGenre.value === 'all' ||
                 previewImage.src === '') {
@@ -108,7 +107,6 @@ export class NewPostPage extends Component {
             },
             "imageUrl": options.imageUrl
         };
-        console.log(post);
 
         let newPosts = [];
         if (localStorage.getItem('newPosts')) {

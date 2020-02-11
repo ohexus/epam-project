@@ -1,6 +1,6 @@
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -24,23 +24,35 @@ module.exports = {
                 })
             },
             {
-                test: /\.(gif|png|jpe?g|svg)$/i,
-                use: [
-                    'file-loader',
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            disable: true
-                        },
+                test: /\.(gif|png|jpe?g|ico)$/i,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: `assets/[name].[ext]`,
+                    }
+                }, {
+                    loader: 'image-webpack-loader',
+                    options: {
+                        disable: true
                     },
-                ],
+                }, ],
+            },
+            {
+                test: /\.svg/,
+                use: {
+                    loader: 'svg-url-loader',
+                    options: {
+                        name: `assets/[name].[ext]`,
+                    }
+                }
             }
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html",
-            filename: "index.html"
+            filename: "index.html",
+            favicon: "./src/Images/favicon.svg"
         }),
         new ExtractTextPlugin('style.css')
     ]

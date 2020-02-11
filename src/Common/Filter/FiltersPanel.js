@@ -7,15 +7,9 @@ import { clearElement } from '../../Core/Functions.js';
 
 const renderMarkup = (options) => `
 <form class="filters" id="filtersForm">
-    <div class="filters__item filters__sort-filter">
-
-    </div>
-    <div class="filters__item filters__genre-filter">
-
-    </div>
-    <div class="filters__item filters__topic-filter">
-
-    </div>
+    <div class="filters__item filters__sort-filter"></div>
+    <div class="filters__item filters__genre-filter"></div>
+    <div class="filters__item filters__topic-filter"></div>
     <div class="filters__item">
         <input class="filter__submit" type="submit" id="filterSubmit">
         <label class="filter__submit-label" for="filterSubmit">Filter posts</label>
@@ -60,7 +54,6 @@ export class FiltersPanel extends Component {
                 this.filterByGenre(genreElem.querySelector('[name=genre]:checked'), options);
                 this.filterByTopic(topicElem.querySelector('[name=topic]:checked'), options);
                 this.sortPosts(document.querySelector('[name=sort]:checked'), options);
-                console.log(options.dataPosts);
             });
             options.countListeners++;
         }
@@ -121,13 +114,13 @@ export class FiltersPanel extends Component {
                 case 'all':
                     options.dataPosts = options.dataPosts;
                     break;
-                case 'concert':
+                case 'concerts':
                     options.dataPosts = options.dataPosts.filter(post => post.topic === 'concert');
                     break;
-                case 'review':
+                case 'reviews':
                     options.dataPosts = options.dataPosts.filter(post => post.topic === 'review');
                     break;
-                case 'interview':
+                case 'interviews':
                     options.dataPosts = options.dataPosts.filter(post => post.topic === 'interview');
                     break;
             }

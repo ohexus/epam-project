@@ -12,7 +12,6 @@ export class Router {
             window.location.hash.substr(1).split('/')[0] :
             'default';
         this.navigate(routeName);
-        console.log(`routeName: ${routeName}`);
     }
 
     navigate = (routeName) => {
