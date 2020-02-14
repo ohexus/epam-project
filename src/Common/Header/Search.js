@@ -3,8 +3,10 @@ import { searchWatch } from '../../Core/SearchLogic.js';
 
 const renderMarkup = (options) => `
 <div class="search">
+    <input type="checkbox" class="search__form-input" id="searchFormShowInput">
+    <label class="search__form-label" for="searchFormShowInput"></label>
     <form class="search__form" id="searchForm">
-        <input type="text" class="search__input" placeholder="Search here..." value="" autofocus id="searchInput"> 
+        <input type="text" class="search__input" placeholder="Search here..." value="" id="searchInput"> 
         <input type="button" class="search__cancel" id="searchCancel">
         <input type="submit" class="search__submit" id="searchSubmit">
     </form>

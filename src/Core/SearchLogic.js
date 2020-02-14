@@ -2,7 +2,7 @@ import { getDataPosts, getDataUsers } from "./GetData";
 import { clearElement, findUser } from "./Functions";
 import { SearchItem } from "../Common/Header/SearchItem";
 
-function styleIn() {
+function resultsStyleIn() {
     const resultsWrap = document.querySelector('.search__results-wrap');
     resultsWrap.style.height = 'auto';
 
@@ -18,7 +18,7 @@ function styleIn() {
     }
 }
 
-function styleOut() {
+function resultsStyleOut() {
     clearElement(document.querySelector('.search__posts-list'));
     clearElement(document.querySelector('.search__users-list'));
     const results = document.getElementsByClassName('search__results');
@@ -66,18 +66,45 @@ function searchLogic() {
                 context: `click to see this user's page`
             }).getMarkup());
         });
-        styleIn();
+        resultsStyleIn();
     } else {
-        styleOut();
+        resultsStyleOut();
     }
 }
 
 function searchCancel() {
     document.getElementById('searchInput').value = '';
-    styleOut();
+    resultsStyleOut();
+}
+
+function searchResizeCheck() {
+    if (window.innerWidth > 650) {
+        document.getElementById('searchForm').style.transition = '0s';
+        setTimeout(() => document.getElementById('searchForm').style.transition = '0.3s', 0);
+    } else {
+        document.getElementById('searchForm').style.transition = '0.3s';
+    }
+    document.getElementById('searchFormShowInput').checked = window.innerWidth > 650 ? true : false;
+    document.getElementById('searchForm').style.position = window.innerWidth > 650 ? 'static' : 'absolute';
+}
+
+function focusOnInput() {
+    if (document.getElementById('searchFormShowInput').checked) {
+        document.getElementById('searchInput').addEventListener('focus', () => {
+            document.getElementById('searchInput').addEventListener('blur', () => document.getElementById('searchFormShowInput').checked = false);
+            document.getElementById('searchForm').addEventListener('click', () => {
+                document.getElementById('searchFormShowInput').checked = true;
+                document.getElementById('searchInput').focus();
+            });
+        });
+        document.getElementById('searchInput').focus();
+    }
 }
 
 export function searchWatch() {
+    searchResizeCheck();
+    window.addEventListener('resize', searchResizeCheck);
+    document.getElementById('searchFormShowInput').addEventListener('change', focusOnInput);
     document.getElementById('searchInput').addEventListener('keyup', searchLogic);
     document.getElementById('searchCancel').addEventListener('click', searchCancel);
     document.getElementById('searchForm').addEventListener('submit', (e) => {

@@ -54,7 +54,7 @@ export class SinglePost extends Component {
                 size: 'single',
                 postId: dataPosts[currentPost].postId,
                 imagePost: dataPosts[currentPost].imageUrl,
-                imageAvatar: (dataUsers[currentUser].avatarUrl === 'default') ? require('../Images/user-icon.svg') : options.dataUsers[currentUser].avatarUrl,
+                imageAvatar: (dataUsers[currentUser].avatarUrl === 'default') ? require('../Images/user-icon.svg') : dataUsers[currentUser].avatarUrl,
                 login: dataUsers[currentUser].login,
                 datePubl: dataPosts[currentPost].date.datePublished,
                 timePubl: dataPosts[currentPost].date.timePublished,

@@ -10,13 +10,11 @@ const renderMarkup = (options) => `
         new FiltersPanel(options).getMarkup()
         }
     </div>
-
     <div class="posts-wrap">
         ${
             new PostsPage(options).getMarkup()
         }
     </div>
-
     <div class="more-btn-wrap">
        ${
            new ButtonMore().getMarkup()

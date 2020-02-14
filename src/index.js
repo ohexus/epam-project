@@ -14,6 +14,7 @@ import './Styles/gallery.scss';
 import './Styles/newPost.scss';
 import './Styles/singlePost.scss';
 import './Styles/adaptivity.scss';
+import { UserPage } from './Pages/UserPage.js';
 
 const router = new Router({
         default: new MainPage(),
@@ -24,7 +25,16 @@ const router = new Router({
         gallery: new GalleryPage(),
         reviews: new ReviewsPage(),
         interviews: new InterviewsPage(),
-        newpost: new NewPostPage()
+        newpost: new NewPostPage(),
+        user: new UserPage()
     },
     document.getElementById('main')
 );
+
+window.addEventListener('load', () => {
+    document.querySelector('.preloader').classList.add('loaded-hiding');
+    window.setTimeout(() => {
+        document.querySelector('.preloader').classList.remove('loaded-hiding');
+        document.querySelector('.preloader').classList.add('loaded');
+    }, 1000);
+});

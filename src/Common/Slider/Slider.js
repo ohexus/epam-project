@@ -22,6 +22,7 @@ export class Slider extends Component {
                 window.addEventListener('hashchange', () => {
                     if (window.location.hash === '') {
                         this.addItems();
+
                     }
                 });
             });
@@ -31,8 +32,8 @@ export class Slider extends Component {
     addItems = () => {
         if (document.querySelector('.slider-panel').children.length === 0) {
             let dataSlider = getDataSlider();
-            let sliderElem = document.querySelector('.slider');
-            let sliderPanel = sliderElem.querySelector('.slider-panel');
+            const sliderElem = document.querySelector('.slider');
+            const sliderPanel = sliderElem.querySelector('.slider-panel');
 
             for (let i = 0; i < dataSlider.length; i++) {
                 sliderElem.insertAdjacentHTML('afterbegin', new SliderItem({
@@ -41,7 +42,7 @@ export class Slider extends Component {
                     title: dataSlider[i].article.title,
                     content: dataSlider[i].article.content
                 }).getMarkup());
-                sliderPanel.insertAdjacentHTML('beforeend', new SliderPanelDot({
+                sliderPanel.insertAdjacentHTML('afterbegin', new SliderPanelDot({
                     slideId: dataSlider[i].slideId,
                 }).getMarkup());
             }

@@ -1,9 +1,8 @@
-import { findUser, clearElement, findUserByLogin } from './Functions.js';
-import { getDataUsers, getDataPosts } from './GetData.js';
+import { findUserByLogin } from './Functions.js';
+import { getDataUsers } from './GetData.js';
 import { UserPanel } from '../Common/Header/UserPanel.js';
-let dataPosts = getDataPosts();
 let dataUsers = getDataUsers();
-let defaultUserIcon = require('../Images/user-icon.svg');
+const defaultUserIcon = require('../Images/user-icon.svg');
 
 function watchForm() {
     let activeUser = localStorage.getItem('activeUser');
@@ -70,16 +69,17 @@ function logIn(login) {
     if (document.querySelector('.auth')) {
         document.querySelector('.auth').remove();
         document.querySelector('.header-row').insertAdjacentHTML('beforeend', new UserPanel({
+            userUrl: `#user/${current}`,
             avatarUrl: current ? ((dataUsers[current].avatarUrl === 'default') ? defaultUserIcon : dataUsers[current].avatarUrl) : defaultUserIcon,
             login: login
         }).getMarkup());
     }
+    if (document.querySelector('.new-post-btn')) document.querySelector('.new-post-btn').style.display = 'flex';
     document.querySelector('.user-panel__sign-out').addEventListener('click', () => {
         localStorage.removeItem('activeUser');
         document.querySelector('.new-post-btn').style.display = 'none';
         window.location.reload();
     });
-    if (document.querySelector('.new-post-btn')) document.querySelector('.new-post-btn').style.display = 'flex';
 }
 
 function signInCheck(login, password, users) {

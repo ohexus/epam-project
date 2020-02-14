@@ -29,11 +29,11 @@ const renderMarkup = (options) => `
         <div class="post__stats">
             <div class="post__views">
                 <span class="post__views-number">${options.views}</span>
-                <span>views</span>
+                <i class="post__views-icon"></i>
             </div>
             <div class="post__likes">
                 <span class="post__likes-number">${options.likes}</span>
-                <span>likes</span>
+                <i class="post__likes-icon"></i>
             </div>
         </div>
     </div>

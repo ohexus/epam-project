@@ -25,17 +25,12 @@ module.exports = {
             },
             {
                 test: /\.(gif|png|jpe?g|ico)$/i,
-                use: [{
+                use: {
                     loader: 'file-loader',
                     options: {
                         name: `assets/[name].[ext]`,
                     }
-                }, {
-                    loader: 'image-webpack-loader',
-                    options: {
-                        disable: true
-                    },
-                }, ],
+                },
             },
             {
                 test: /\.svg/,

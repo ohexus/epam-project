@@ -14,9 +14,8 @@ const renderMarkup = (options) => `
         <div class="footer-menu">
 
             <div class="footer-menu__item">
-                <h4 class="footer-menu__item-header"><a class="footer-menu__link" href="./genres.html">Genres</a></h4>
-
-                <ul>
+                <h5 class="footer-menu__item-header"><a class="footer-menu__link" href="${options.genres}">Genres</a></h5>
+                <ul class="footer-menu__item-menu">
                     <li><a class="footer-menu__link" href="#">Trip-hop</a></li>
                     <li><a class="footer-menu__link" href="#">Experimental</a></li>
                     <li><a class="footer-menu__link" href="#">Electronic</a></li>
@@ -26,8 +25,8 @@ const renderMarkup = (options) => `
             </div>
 
             <div class="footer-menu__item">
-                <h4 class="footer-menu__item-header"><a class="footer-menu__link" href="./reviews.html">Reviews</a></h4>
-                <ul>
+                <h5 class="footer-menu__item-header"><a class="footer-menu__link" href="${options.reviews}">Reviews</a></h5>
+                <ul class="footer-menu__item-menu">
                     <li><a class="footer-menu__link" href="#">The Blaze</a></li>
                     <li><a class="footer-menu__link" href="#">Forest Swords</a></li>
                     <li><a class="footer-menu__link" href="#">The Prodigy</a></li>
@@ -37,8 +36,8 @@ const renderMarkup = (options) => `
             </div>
             
             <div class="footer-menu__item">
-                <h5 class="footer-menu__item-header"><a class="footer-menu__link" href="#">Interviews</a></h5>
-                <ul>
+                <h5 class="footer-menu__item-header"><a class="footer-menu__link" href="${options.interviews}">Interviews</a></h5>
+                <ul class="footer-menu__item-menu">
                     <li><a class="footer-menu__link" href="#">Nicolas Jaar</a></li>
                     <li><a class="footer-menu__link" href="#">СБПЧ</a></li>
                     <li><a class="footer-menu__link" href="#">Massive Attack</a></li>
@@ -49,15 +48,15 @@ const renderMarkup = (options) => `
             
             <div class="footer-menu__item">
                 <h5 class="footer-menu__item-header"><a class="footer-menu__link" href="#">Albums</a></h5>
-                <ul>
+                <ul class="footer-menu__item-menu">
                     <li><a class="footer-menu__link" href="#">"Вассерваага": Вагоновожатые</a></li>
                     <li><a class="footer-menu__link" href="#">"Так закалялась сталь": Shortparis</a></li>
                 </ul>
             </div>
 
             <div class="footer-menu__item">
-                <h4 class="footer-menu__item-header"><a class="footer-menu__link" href="./concerts.html">Concerts</a></h4>
-                <ul>
+                <h5 class="footer-menu__item-header"><a class="footer-menu__link" href="${options.concerts}">Concerts</a></h5>
+                <ul class="footer-menu__item-menu">
                     <li><a class="footer-menu__link" href="#">Shortparis</a></li>
                     <li><a class="footer-menu__link" href="#">Дельфин</a></li>
                     <li><a class="footer-menu__link" href="#">Yuko</a></li>
@@ -67,7 +66,7 @@ const renderMarkup = (options) => `
             </div>
 
             <div class="footer-menu__item">
-                <h4 class="footer-menu__item-header"><a class="footer-menu__link" href="#">About Us</a></h4>
+                <h5 class="footer-menu__item-header"><a class="footer-menu__link" href="#">About Us</a></h5>
             </div>
         </div>
         <hr>
@@ -93,7 +92,12 @@ const renderMarkup = (options) => `
 `
 
 export class Footer extends Component {
-    constructor(options = {}) {
+    constructor(options = {
+        genres: '#genres',
+        concerts: '#concerts',
+        reviews: '#reviews',
+        interviews: '#interviews'
+    }) {
         super(options, renderMarkup(options));
     }
 }
